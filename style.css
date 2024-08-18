@@ -33,25 +33,31 @@ header{
 
 .name{
     font-size: 32px;
+    color: white;
     pointer-events: none;
+}
+
+a{
+    text-decoration: none;
 }
 
 .text-area-div{
     display: flex;
-    background-color: red;
+    border:1px solid red;
     height: 85%;
 }
 
 textarea{
     display: flex;
-    width: 100%;
-    border: 3px ridge firebrick;
+    width: 60%;
+    margin: 0 auto;
+    /* border: 3px ridge firebrick; */
     color: white;
     resize: none;
     outline: none;
-    font-size: 16px;
-    line-height: 1.3rem;
-    padding: 4px;
+    font-size: 20px;
+    line-height: 1.5rem;
+    padding: 16px 8px;
     background-image: linear-gradient(to top right, black, green);
 }
 
@@ -90,4 +96,5 @@ textarea{
 button{
     cursor: pointer;
     padding: 8px 16px;
+
 }

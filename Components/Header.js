@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom"
+
 const Header = () =>{
     return(
         <header className="header">
-            <h2 className="name">Hearts ♥ And Quills 🪶</h2>
+            <Link to={"/"}>
+               <h2 className="name">Hearts ♥ And Quills 🪶</h2>
+            </Link>
+         
             <ul className="cues">
                 <span>Cues:</span>
                 <p>Sight</p>

@@ -26,6 +26,10 @@ const AppRoute = createBrowserRouter([
                 path:"/",
                 element:<Intro/>
             },
+            {
+                path:"/playground",
+                element:<WritingArea/>
+            },
         {
             path:"/thank-you",
             element:<ThankYou/>

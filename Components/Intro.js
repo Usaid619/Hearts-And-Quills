@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Intro = () =>{
     return(
         <div className="intro-div">
@@ -9,7 +11,10 @@ const Intro = () =>{
                 <input type="number"/>
                 </div>
             
-            <button>Start Writing</button>
+            <Link to={"/playground"}>
+               <button>Start Writing</button>
+            </Link>
+         
         </div>
         <p>description</p>
         </div>
