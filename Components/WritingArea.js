@@ -1,7 +1,7 @@
 const WritingArea = () =>{
     return(
-        <div>
-            <textarea></textarea>
+        <div className="text-area-div">
+            <textarea autoFocus></textarea>
         </div>
     )
 }
