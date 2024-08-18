@@ -1,0 +1,28 @@
+{
+  "name": "hearts-and-quills",
+  "version": "1.0.0",
+  "description": "A writing app  with a twist.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "npx parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/Usaid619/Hearts And Quills.git)"
+  },
+  "author": "usaid",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.12.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  },
+  "browsersList": [
+    "Last 2 Versions"
+  ]
+}
