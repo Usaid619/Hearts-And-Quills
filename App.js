@@ -12,7 +12,7 @@ import Intro from "./Components/Intro"
 const AppLayout = () => {
     return (
         <div className="parent">
-            <Header/>
+            {/* <Header/> */}
             <Outlet/>
         </div>
     )
