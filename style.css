@@ -19,7 +19,7 @@ header{
     background-color: red;
     color: rgb(241, 241, 241);
     /* padding: 24px; */
-    height: 15%;
+    height: 13%;
     /* height: 80px; */
 }
 
@@ -42,10 +42,39 @@ a{
 }
 
 .text-area-div{
+    /* position: relative; */
     display: flex;
     border:1px solid red;
-    height: 85%;
+    height: 86%;
 }
+
+/* Styling Progress */
+
+progress[value] {
+    -webkit-appearance:none;
+    -moz-appearance:none;        
+    appearance: none;
+  }
+
+  progress[value]{
+    position: absolute;
+    bottom: 0;
+    color: black;
+    background-color: rgb(196, 13, 13);
+    height: 1%;
+    width: 99%;
+    margin: 0 2px;
+  }
+
+  progress[value]::-webkit-progress-bar{
+    border-radius: 10em;
+    background-color: lightgray;
+  }
+
+  progress[value]::-webkit-progress-value{
+    border-radius: 10em;
+    background-color: firebrick;
+  }
 
 textarea{
     display: flex;
