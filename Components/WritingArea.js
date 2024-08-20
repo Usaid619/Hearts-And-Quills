@@ -1,4 +1,9 @@
+import { useContext } from "react"
+import WritingContext from "../utils/WritingContext"
+
 const WritingArea = () =>{
+    const {sessionTime} = useContext(WritingContext)
+
     return(
         <div className="text-area-div">
             <ul>

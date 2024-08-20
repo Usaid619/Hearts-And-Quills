@@ -3,17 +3,21 @@ import { Link } from "react-router-dom"
 import Modal from "./Modal"
 import Button from "./Button"
 import WritingContext from "../utils/WritingContext"
+import useRandomWord from "../utils/hooks/useRandomWord"
 
 const Intro = () =>{
     const [showModal,setShowModal] = useState(false)
     
     const {sessionTime,setWritingTime} = useContext(WritingContext)
 
+    const wordOfTheDay = useRandomWord
+    console.log(wordOfTheDay)
+
     return(
         <div className="intro-div">
         <div className="intro-info-div">
             <h1>Hearts And Quills</h1>
-            <h4>Word of the day - Book</h4>
+            <h4>Word of the day - {wordOfTheDay.toUpperCase()}</h4>
             <div className="timer-div">
                 <p>Writing Session -</p>
                 <div className="timer-modal">
