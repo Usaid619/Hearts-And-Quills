@@ -1,9 +1,10 @@
 import RandomWords from "../Constants";
 
 const randomWordsCopy = [...RandomWords]
-const randomIndex = ~~(Math.random()*randomWordsCopy.length)
+
 
 function selectAndUpdate(){
+    const randomIndex = ~~(Math.random()*randomWordsCopy.length)
 const randomWord = randomWordsCopy[randomIndex]
 
 randomWordsCopy.splice(randomIndex,1)

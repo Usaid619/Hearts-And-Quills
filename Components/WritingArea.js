@@ -1,8 +1,23 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import WritingContext from "../utils/WritingContext"
 
 const WritingArea = () =>{
     const {sessionTime} = useContext(WritingContext)
+    const [isWriting,setIsWriting] = useState(false)
+
+    useEffect(()=>{
+        console.log(isWriting)
+    },[isWriting])
+
+    const resetTimer = () =>{
+        // console.log("timer reset")
+    }
+
+    const handleStart = () =>{
+        setIsWriting(true)
+        resetTimer()
+        // console.log("started")
+    }
 
     return(
         <div className="text-area-div">
@@ -14,7 +29,7 @@ const WritingArea = () =>{
                 <li>Taste</li>
                 <li>Touch</li>
             </ul>
-            <textarea autoFocus></textarea>
+            <textarea autoFocus onChange={()=> handleStart()}></textarea>
         </div>
     )
 }
