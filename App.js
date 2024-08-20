@@ -8,13 +8,19 @@ import WritingArea from "./Components/WritingArea"
 import ErrorPage from "./Components/Error"
 import ThankYou from "./Components/ThankYou"
 import Intro from "./Components/Intro"
+import { useState } from "react"
+import WritingContext from "./utils/WritingContext"
 
 const AppLayout = () => {
+const [writingTime,setWritingTime] = useState(10)
+
     return (
+        <WritingContext.Provider value={{sessionTime: writingTime,setWritingTime}}>
         <div className="parent">
             {/* <Header/> */}
             <Outlet/>
         </div>
+        </WritingContext.Provider>
     )
 }
 

@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useState, useContext} from "react"
 import { Link } from "react-router-dom"
 import Modal from "./Modal"
 import Button from "./Button"
+import WritingContext from "../utils/WritingContext"
 
 const Intro = () =>{
     const [showModal,setShowModal] = useState(false)
-    const [sessionTime,setSessionTime] = useState(10)
+    
+    const {sessionTime,setWritingTime} = useContext(WritingContext)
 
     return(
         <div className="intro-div">
@@ -15,7 +17,7 @@ const Intro = () =>{
             <div className="timer-div">
                 <p>Writing Session -</p>
                 <div className="timer-modal">
-                    {showModal && <Modal setShowModal={setShowModal} setSessionTime={setSessionTime}/>}    
+                    {showModal && <Modal setShowModal={setShowModal} setWritingTime={setWritingTime}/>}    
                 <p onClick={()=>setShowModal(!showModal)}>{sessionTime} mins</p>
                 </div>
             </div>
