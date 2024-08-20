@@ -1,6 +1,7 @@
-const Modal = ({setSessionTime}) =>{
+const Modal = ({setSessionTime,setShowModal}) =>{
    const handleClick = (para) =>{
    setSessionTime(para)
+   setShowModal(false)
    }
     
     return(

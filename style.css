@@ -9,7 +9,7 @@
     flex-direction: column; */
     height: 100vh;
     /* width: 100vw; */
-    background-color: pink;
+    background-color: #fff;
 }
 
 header{
@@ -44,24 +44,44 @@ a{
 }
 
 .text-area-div{
-    /* position: relative; */
+    position: relative;
     display: flex;
     border:1px solid red;
-    height: 86%;
+    height: 100%;
+    padding: 1em 0;
+}
+
+.text-area-div > ul{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    translate: 0 -50%;
+    /* height: max-content; */
+    /* background-color: red; */
+    color: black;
+    list-style: none;
+    font-size: 32px;
 }
 
 textarea{
     display: flex;
-    width: 60%;
+    width: 50%;
+    min-width: 400px;
     margin: 0 auto;
     /* border: 3px ridge firebrick; */
-    color: white;
+    color: black;
     resize: none;
     outline: none;
     font-size: 20px;
     line-height: 1.5rem;
     padding: 16px 8px;
-    background-image: linear-gradient(to top right, black, green);
+    border-radius: 1.4em;
+    background-color: rgb(252, 236, 208);
+    box-shadow: 0 0 10px 1px rgba(87, 78, 78, 0.527);
+    overflow: hidden;
 }
 
 .intro-div{
@@ -73,6 +93,7 @@ textarea{
 }
 
 .intro-info-div{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +104,10 @@ textarea{
     background-color: rgb(139, 201, 170);
 }
 
-.intro-div > p{
+.intro-info-div > p{
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
     word-wrap: break-word;
     white-space: pre-wrap;
     font-size: 22px;
