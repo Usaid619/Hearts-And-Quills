@@ -8,10 +8,12 @@ const WritingArea = () =>{
     const [text,setText] = useState("")
     const [timerStarted,setTimerStarted] = useState(false)
     const [time, setTime] = useState(0)
-    // console.log(sessionTime)
+    const [percentage,setPercentage] = useState(0)
+    
 
     useEffect(()=>{
         console.log(time + 1)
+          setPercentage(time / (sessionTime * 60) * 100)
     },[time])
 
     const copyText = () =>{
@@ -64,6 +66,8 @@ const WritingArea = () =>{
             <h1>Word Of The Day</h1>
             <h2>{wordOfTheDay.toUpperCase()}</h2>
             </div>
+
+            <div className="progress" style={{width:`${percentage}%`}}></div>
         </div>
     )
 }

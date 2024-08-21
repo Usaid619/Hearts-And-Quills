@@ -93,6 +93,14 @@ textarea{
     padding: 1em 0;
 }
 
+.progress{
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    background-color: black;
+    transition: all 1s ease;
+}
+
 .text-area-div > ul{
     display: flex;
     flex-direction: column;
