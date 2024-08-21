@@ -10,6 +10,7 @@
     height: 100vh;
     /* width: 100vw; */
     background-color: #fff;
+    overflow: hidden;
 }
 
 header{
@@ -104,14 +105,27 @@ textarea{
     background-color: rgb(139, 201, 170);
 }
 
-.intro-info-div > p{
+.marquee{
     position: absolute;
-    bottom: 2%;
-    left: 2%;
-    word-wrap: break-word;
-    white-space: pre-wrap;
+    display: flex;
+    gap: 1em;
+    bottom: 4%;
+    background-color: #000;
+    /* word-wrap: break-word; */
+    /* white-space: pre-wrap; */
     font-size: 22px;
     padding: 6px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee > span{
+    /* background-color: #fff; */
+    color: wheat;
+    display: inline-block;
+    padding: 0 .3em;
+    white-space: nowrap;
+    animation: scroll 10s linear infinite;
 }
 
 .timer-div{
@@ -177,4 +191,13 @@ cursor: pointer;
 button{
     cursor: pointer;
     padding: 8px 16px;
+}
+
+@keyframes scroll{
+    from{
+        translate: 0;
+    }
+    to{
+        translate: calc(-100% - 1em);
+    }
 }

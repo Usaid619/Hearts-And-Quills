@@ -29,7 +29,10 @@ const Intro = () =>{
             <Link to={"/playground"}>
                <Button/>
             </Link>
-          <p>description</p>
+          <div className="marquee">
+            <span>Write Fast, Write Fearless: Choose Your Time, Keep the Words Coming - Pause for 10 Seconds, and Your Work Vanishes. Complete Your Session to Save and Share!</span>
+            <span>Write Fast, Write Fearless: Choose Your Time, Keep the Words Coming - Pause for 10 Seconds, and Your Work Vanishes. Complete Your Session to Save and Share! </span>
+          </div>
         </div>
         </div>
     )

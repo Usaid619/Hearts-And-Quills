@@ -7,6 +7,7 @@ const WritingArea = () =>{
 
     useEffect(()=>{
         console.log(isWriting)
+        console.log(sessionTime)
     },[isWriting])
 
     const resetTimer = () =>{
