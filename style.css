@@ -76,7 +76,11 @@ textarea{
     width: 100%;
     padding: 16px 8px;
     border-radius: 1.4em;
-    background-color: rgb(252, 236, 208);
+    /* background-color: rgb(252, 236, 208); */
+    background-image: url(./Assets/Images/page.avif);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     box-shadow: 0 0 10px 1px rgba(87, 78, 78, 0.527);
     /* overflow: hidden; */
 }
@@ -128,6 +132,15 @@ textarea{
     background-color: gainsboro;
     /* height: 100px;
     width: 100px; */
+}
+
+.start-btn{
+    outline: none;
+    border: 3px solid #64440d;
+    padding: 1em 1.6em;
+    border-radius: 1em;
+    color: #eee;
+    background-color: #190E05;
 }
 
 .intro-div{
