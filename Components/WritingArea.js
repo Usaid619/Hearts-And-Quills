@@ -1,25 +1,38 @@
 import { useContext, useEffect, useState } from "react"
 import WritingContext from "../utils/WritingContext"
+import useRandomWord from "../utils/hooks/useRandomWord"
 
 const WritingArea = () =>{
+    const wordOfTheDay = useRandomWord
     const {sessionTime} = useContext(WritingContext)
     const [isWriting,setIsWriting] = useState(false)
+    const [text,setText] = useState("")
 
     useEffect(()=>{
+        if(isWriting){
+        resetTimer()
         console.log(isWriting)
         console.log(sessionTime)
+        }
+        
     },[isWriting])
 
     const resetTimer = () =>{
-        // console.log("timer reset")
+        console.log("timer started")
     }
 
-    const handleStart = () =>{
+    const handleStart = (e) =>{
         setIsWriting(true)
-        resetTimer()
+        setText(e.target.value)
         // console.log("started")
     }
 
+    const copyText = () =>{
+       navigator.clipboard.writeText(text)
+
+       alert("copied Text")
+    }
+ 
     return(
         <div className="text-area-div">
             <ul>
@@ -30,7 +43,16 @@ const WritingArea = () =>{
                 <li>Taste</li>
                 <li>Touch</li>
             </ul>
-            <textarea autoFocus onChange={()=> handleStart()}></textarea>
+            <div className="text-area-container">
+            <textarea value={text} autoFocus onChange={(e)=> handleStart(e)}>
+            </textarea>
+            {text &&  <button className="copy-btn" onClick={()=>copyText()}>Copy</button>}
+          
+            </div>
+            <div className="wotd-div">
+            <h1>Word Of The Day</h1>
+            <h2>{wordOfTheDay.toUpperCase()}</h2>
+            </div>
         </div>
     )
 }

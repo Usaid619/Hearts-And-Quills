@@ -17,7 +17,6 @@ const [writingTime,setWritingTime] = useState(10)
     return (
         <WritingContext.Provider value={{sessionTime: writingTime,setWritingTime}}>
         <div className="parent">
-            {/* <Header/> */}
             <Outlet/>
         </div>
         </WritingContext.Provider>

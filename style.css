@@ -9,8 +9,20 @@
     flex-direction: column; */
     height: 100vh;
     /* width: 100vw; */
-    background-color: #fff;
+    background-color: #910c0c;
+    background-image: url(./Assets/Images/writing-3.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     overflow: hidden;
+}
+
+.parent::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(2px);
 }
 
 header{
@@ -34,14 +46,39 @@ header{
     font-weight: bold;
 } */
 
-.name{
+/* .name{
     font-size: 32px;
     color: white;
     pointer-events: none;
-}
+} */
 
 a{
     text-decoration: none;
+}
+
+.text-area-container{
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    /* border: 3px solid black; */
+}
+
+textarea{
+    display: flex;
+    /* border: 3px ridge firebrick; */
+    color: black;
+    resize: none;
+    outline: none;
+    letter-spacing: 1px;
+    font-size: 20px;
+    line-height: 1.5rem;
+    height: 100%;
+    width: 100%;
+    padding: 16px 8px;
+    border-radius: 1.4em;
+    background-color: rgb(252, 236, 208);
+    box-shadow: 0 0 10px 1px rgba(87, 78, 78, 0.527);
+    /* overflow: hidden; */
 }
 
 .text-area-div{
@@ -61,35 +98,44 @@ a{
     left: 7%;
     translate: 0 -50%;
     /* height: max-content; */
-    /* background-color: red; */
+    background-color: red;
     color: black;
     list-style: none;
     font-size: 32px;
 }
 
-textarea{
+.wotd-div{
+    position: absolute;
     display: flex;
-    width: 50%;
-    min-width: 400px;
-    margin: 0 auto;
-    /* border: 3px ridge firebrick; */
-    color: black;
-    resize: none;
+    flex-direction: column;
+    align-items: center;
+    gap: .6em;
+    background-color: red;
+    right: 3%;
+    top: 50%;
+    translate: 0 -50%;
+    /* font-size: 32px; */
+}
+
+.copy-btn{
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
     outline: none;
-    font-size: 20px;
-    line-height: 1.5rem;
-    padding: 16px 8px;
-    border-radius: 1.4em;
-    background-color: rgb(252, 236, 208);
-    box-shadow: 0 0 10px 1px rgba(87, 78, 78, 0.527);
-    overflow: hidden;
+    border: 1px solid grey;
+    border-radius: 14px;
+    font-weight: 700;
+    background-color: gainsboro;
+    /* height: 100px;
+    width: 100px; */
 }
 
 .intro-div{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    /* background-color: white; */
     height: 100%;
+    color: #190E05;
     /* overflow: hidden; */
 }
 
@@ -102,14 +148,14 @@ textarea{
     gap: 20px;
     font-size: 32px;
     flex: 1;
-    background-color: rgb(139, 201, 170);
+    /* background-color: rgb(139, 150, 201); */
 }
 
 .marquee{
     position: absolute;
     display: flex;
     gap: 1em;
-    bottom: 4%;
+    bottom: 2%;
     background-color: #000;
     /* word-wrap: break-word; */
     /* white-space: pre-wrap; */
@@ -210,5 +256,11 @@ button{
     }
     to{
         translate: calc(-100% - 1em);
+    }
+}
+
+@media all and (max-width:1200px) {
+    .text-area-div > div{
+        font-size: 6px;
     }
 }
