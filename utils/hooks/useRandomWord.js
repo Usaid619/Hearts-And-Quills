@@ -9,7 +9,7 @@ const randomWord = randomWordsCopy[randomIndex]
 
 randomWordsCopy.splice(randomIndex,1)
 
-console.log(randomWordsCopy)
+// console.log(randomWordsCopy)
 
 return randomWord
 }

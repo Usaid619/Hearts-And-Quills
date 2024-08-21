@@ -5,32 +5,43 @@ import useRandomWord from "../utils/hooks/useRandomWord"
 const WritingArea = () =>{
     const wordOfTheDay = useRandomWord
     const {sessionTime} = useContext(WritingContext)
-    const [isWriting,setIsWriting] = useState(false)
     const [text,setText] = useState("")
+    const [timerStarted,setTimerStarted] = useState(false)
+    const [time, setTime] = useState(0)
+    // console.log(sessionTime)
 
     useEffect(()=>{
-        if(isWriting){
-        resetTimer()
-        console.log(isWriting)
-        console.log(sessionTime)
-        }
-        
-    },[isWriting])
-
-    const resetTimer = () =>{
-        console.log("timer started")
-    }
-
-    const handleStart = (e) =>{
-        setIsWriting(true)
-        setText(e.target.value)
-        // console.log("started")
-    }
+        console.log(time + 1)
+    },[time])
 
     const copyText = () =>{
        navigator.clipboard.writeText(text)
-
        alert("copied Text")
+    }
+
+    const startTimer = () =>{
+        if(!timerStarted){
+            setTimerStarted(true)
+            let timer
+
+            timer = setInterval(()=>{
+                setTime(prev => {
+                    if(prev >= sessionTime * 60){
+                        clearInterval(timer)
+                        setTimerStarted(false)
+                        return prev
+                    }
+                    return prev + 1
+                })
+            },1000)
+        }
+
+        // console.log(time)
+    }
+
+    const handleChange = (e) =>{
+        setText(e.target.value)
+        startTimer()
     }
  
     return(
@@ -44,7 +55,7 @@ const WritingArea = () =>{
                 <li>Touch</li>
             </ul>
             <div className="text-area-container">
-            <textarea value={text} autoFocus onChange={(e)=> handleStart(e)}>
+            <textarea value={text} onChange={(e)=>handleChange(e)} autoFocus>
             </textarea>
             {text &&  <button className="copy-btn" onClick={()=>copyText()}>Copy</button>}
           
