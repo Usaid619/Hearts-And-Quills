@@ -67,7 +67,9 @@ const WritingArea = () =>{
                 <li>Touch</li>
             </ul>
             <div className="text-area-container">
-            <textarea spellCheck="false"
+            <textarea 
+            readOnly={text && !timerStarted && "true"}
+            spellCheck="false"
             placeholder="start writing here..."
             onSelect={preventSelection}
             onKeyUp={preventSelection}
