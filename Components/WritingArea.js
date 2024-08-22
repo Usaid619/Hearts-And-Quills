@@ -9,6 +9,7 @@ const WritingArea = () =>{
     const [timerStarted,setTimerStarted] = useState(false)
     const [time, setTime] = useState(0)
     const [percentage,setPercentage] = useState(0)
+    const [idleTimer,setIdleTimer] = useState(10)
     
     useEffect(()=>{
         let timer
@@ -34,6 +35,17 @@ const WritingArea = () =>{
           setPercentage(time / (sessionTime * 60) * 100)
     },[time,sessionTime])
 
+    useEffect(()=>{
+      let idleTime
+      if(timerStarted){
+        idleTime = setInterval(()=>{
+        setIdleTimer(prev =>{
+           return prev - 1
+        })
+        },1000)
+      }
+    },[text])
+
     const handleChange = (e) =>{
         setText(e.target.value)
         if(!timerStarted && e.target.value){
@@ -58,6 +70,7 @@ const WritingArea = () =>{
  
     return(
         <div className="text-area-div">
+            <p className="idle-timer">{idleTimer}</p>
             <ul>
                 <h3>Cues:</h3>
                 <li>Sight</li>
