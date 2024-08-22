@@ -30,21 +30,39 @@ const WritingArea = () =>{
     },[timerStarted,sessionTime])
 
     useEffect(()=>{
-        console.log(sessionTime)
-        console.log(time + 1)
+        // console.log(sessionTime)
+        console.log(idleTimer)
           setPercentage(time / (sessionTime * 60) * 100)
     },[time,sessionTime])
 
     useEffect(()=>{
-      let idleTime
+        let idleTime
+        setIdleTimer(10)
+
+        if(time <= sessionTime * 60){
+            console.log(time)
+            clearInterval(idleTime)
+        }
+       
       if(timerStarted){
         idleTime = setInterval(()=>{
+            
         setIdleTimer(prev =>{
+            
+            if(prev <= 1){
+                setText("")
+                setTimerStarted(false)
+                setTime(0)
+                clearInterval(idleTime)
+                return "too slow"
+            }
            return prev - 1
         })
         },1000)
       }
-    },[text])
+
+      return () => clearInterval(idleTime)
+    },[timerStarted,text])
 
     const handleChange = (e) =>{
         setText(e.target.value)
@@ -81,7 +99,7 @@ const WritingArea = () =>{
             </ul>
             <div className="text-area-container">
             <textarea 
-            readOnly={text && !timerStarted && "true"}
+            readOnly={text && !timerStarted && true}
             spellCheck="false"
             placeholder="start writing here..."
             onSelect={preventSelection}
