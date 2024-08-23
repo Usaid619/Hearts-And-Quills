@@ -88,7 +88,7 @@ const WritingArea = () =>{
  
     return(
         <div className="text-area-div">
-            <p className="idle-timer">{idleTimer}</p>
+        <div className="writing-header">
             <ul>
                 <h3>Cues:</h3>
                 <li>Sight</li>
@@ -97,6 +97,14 @@ const WritingArea = () =>{
                 <li>Taste</li>
                 <li>Touch</li>
             </ul>
+
+            <div className="wotd-div">
+            <h4>Word Of The Day -</h4>
+            <h2>{wordOfTheDay.toUpperCase()}</h2>
+            </div>
+        </div>
+            <p className="idle-timer">{idleTimer}</p>
+            
             <div className="text-area-container">
             <textarea 
             readOnly={text && !timerStarted && true}
@@ -111,12 +119,8 @@ const WritingArea = () =>{
             autoFocus>
             </textarea>
             {text && !timerStarted &&  <button className="copy-btn" onClick={()=>copyText()}>Copy</button>}
-          
             </div>
-            <div className="wotd-div">
-            <h1>Word Of The Day</h1>
-            <h2>{wordOfTheDay.toUpperCase()}</h2>
-            </div>
+            
 
             <div className="progress" style={{width:`${percentage}%`}}></div>
         </div>

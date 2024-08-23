@@ -27,10 +27,18 @@
 
 .idle-timer{
     position: absolute;
-    top: 4%;
-    left: 4%;
+    top: 2%;
+    left: 50%;
+    translate: -50% 0;
     color: white;
     font-size: 32px;
+}
+
+.writing-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    /* background-color: lavender; */
 }
 
 header{
@@ -67,7 +75,8 @@ a{
 .text-area-container{
     position: relative;
     margin: 0 auto;
-    width: 50%;
+    width: 100%;
+    height: 100%;
     /* border: 3px solid black; */
 }
 
@@ -96,9 +105,10 @@ textarea{
 .text-area-div{
     position: relative;
     display: flex;
+    flex-direction: column;
     border:1px solid red;
     height: 100%;
-    padding: 1em 0;
+    padding: 1em 1em;
 }
 
 .progress{
@@ -109,31 +119,28 @@ textarea{
     transition: all 1s ease;
 }
 
-.text-area-div > ul{
+.writing-header > ul{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    /* flex-direction: column; */
     gap: .5em;
-    position: absolute;
-    top: 50%;
-    left: 7%;
-    translate: 0 -50%;
     /* height: max-content; */
-    background-color: red;
+    /* background-color: red; */
     color: black;
     list-style: none;
-    font-size: 32px;
+    font-size: 16px;
 }
 
 .wotd-div{
-    position: absolute;
+    /* position: absolute; */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     gap: .6em;
-    background-color: red;
-    right: 3%;
+    /* background-color: red; */
+    /* right: 3%;
     top: 50%;
-    translate: 0 -50%;
+    translate: 0 -50%; */
     /* font-size: 32px; */
 }
 
@@ -289,7 +296,7 @@ button{
 }
 
 @media all and (max-width:1200px) {
-    .text-area-div > div{
-        font-size: 6px;
+    .wotd-div > div{
+        font-size: 20px;
     }
 }
