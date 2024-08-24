@@ -103,7 +103,7 @@ const WritingArea = () =>{
             <h2>{wordOfTheDay.toUpperCase()}</h2>
             </div>
         </div>
-            <p className="idle-timer">{idleTimer}</p>
+            <p className="idle-timer" style={{color:idleTimer < 7 ? "yellow" : "black" }}>{idleTimer}</p>
             
             <div className="text-area-container">
             <textarea 

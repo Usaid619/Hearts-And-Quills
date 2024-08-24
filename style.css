@@ -17,20 +17,12 @@
     overflow: hidden;
 }
 
-.parent::before{
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(2px);
-}
-
 .idle-timer{
     position: absolute;
     top: 4%;
     left: 50%;
     translate: -50% 0;
-    color: white;
+    color: #000;
     font-size: 32px;
 }
 
@@ -118,6 +110,7 @@ textarea{
 .progress{
     position: absolute;
     bottom: 0;
+    left: 0;
     height: 5px;
     background-color: black;
     transition: all 1s ease;
@@ -173,10 +166,13 @@ textarea{
 .intro-div{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     /* background-color: white; */
     height: 100%;
-    color: #190E05;
+    color: #e0d3bf;
     /* overflow: hidden; */
+    border: 1px solid red;
 }
 
 .intro-info-div{
@@ -187,8 +183,14 @@ textarea{
     align-items: center;
     gap: 20px;
     font-size: 32px;
-    flex: 1;
-    /* background-color: rgb(139, 150, 201); */
+    padding: 2em;
+    /* flex: 1; */
+    height: max-content;
+    width: max-content;
+    background-image: url(./Assets/Images/scribble-10.png);
+    background-position: center 25%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .marquee{
@@ -237,7 +239,7 @@ color: black;
 
 .timer-modal{
     position: relative;
-   border: 2px solid red;
+   /* border: 2px solid red; */
 }
 
 .timer-modal > div{
