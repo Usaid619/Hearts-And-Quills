@@ -103,7 +103,7 @@ const WritingArea = () =>{
             <h2>{wordOfTheDay.toUpperCase()}</h2>
             </div>
         </div>
-            <p className="idle-timer" style={{color:idleTimer < 7 ? "yellow" : "black" }}>{idleTimer}</p>
+            <p className="idle-timer" style={{color:idleTimer <= 4 ? "firebrick" : idleTimer <= 6 ? "yellow" : "black"}}>{idleTimer}</p>
             
             <div className="text-area-container">
             <textarea 
@@ -121,7 +121,6 @@ const WritingArea = () =>{
             {text && !timerStarted &&  <button className="copy-btn" onClick={()=>copyText()}>Copy</button>}
             </div>
             
-
             <div className="progress" style={{width:`${percentage}%`}}></div>
         </div>
     )

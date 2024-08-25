@@ -106,6 +106,20 @@ textarea{
     height: 100%;
     padding: 1em 1em;
 }
+/* 
+.text-area-div::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: 
+              radial-gradient(circle at top left, rgba(255, 0, 0, 0.5), transparent 10%),
+              radial-gradient(circle at top right, rgba(255, 0, 0, 0.5), transparent 10%),
+              radial-gradient(circle at bottom left, rgba(255, 0, 0, 0.5), transparent 10%),
+              radial-gradient(circle at bottom right, rgba(255, 0, 0, 0.5), transparent 10%);
+              backdrop-filter: blur(1px);
+    pointer-events: none;
+} */
 
 .progress{
     position: absolute;
@@ -156,11 +170,17 @@ textarea{
 
 .start-btn{
     outline: none;
-    border: 3px solid #64440d;
+    border: 1px solid #661108;
     padding: 1em 1.6em;
     border-radius: 1em;
     color: #eee;
-    background-color: #190E05;
+    /* background-color: #020202; */
+    background-image: linear-gradient(to top right, #230200, #020202,#230200);
+    transition: all .1s ease;
+}
+
+.start-btn:hover{
+    scale: 1.05;
 }
 
 .intro-div{
