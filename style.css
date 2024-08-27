@@ -1,3 +1,18 @@
+@font-face {
+    font-family: handwriting;
+    src: url(./Assets/Fonts/d65011811318cf4e-s.p.ttf);
+}
+
+@font-face {
+    font-family: handwriting-1;
+    src: url(./Assets/Fonts/5d1da943bd8329eb-s.p.ttf);
+}
+
+@font-face {
+    font-family: handwriting-2;
+    src: url(./Assets/Fonts/1d259d87df01aa93-s.p.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -34,6 +49,7 @@
     backdrop-filter: blur(5px);
     padding: 1em;
     border-radius: 1em;
+    font-family: handwriting-1;
     /* background-color: lavender; */
 }
 
@@ -77,17 +93,18 @@ a{
 }
 
 textarea{
+    font-family: handwriting;
     display: flex;
     /* border: 3px ridge firebrick; */
     color: black;
     resize: none;
     outline: none;
     letter-spacing: 1px;
-    font-size: 20px;
+    font-size: 32px;
     line-height: 1.5rem;
     height: 100%;
     width: 100%;
-    padding: 16px 8px;
+    padding: 16px 12px;
     border-radius: 1.4em;
     /* background-color: rgb(252, 236, 208); */
     background-image: url(./Assets/Images/page.avif);
@@ -139,7 +156,7 @@ textarea{
     /* background-color: red; */
     color: black;
     list-style: none;
-    font-size: 16px;
+    font-size: 26px;
 }
 
 .wotd-div{
@@ -152,7 +169,7 @@ textarea{
     /* right: 3%;
     top: 50%;
     translate: 0 -50%; */
-    /* font-size: 32px; */
+    font-size: 26px;
 }
 
 .copy-btn{
@@ -193,6 +210,7 @@ textarea{
     color: #e0d3bf;
     /* overflow: hidden; */
     border: 1px solid red;
+    font-family: handwriting-1;
 }
 
 .intro-info-div{
@@ -202,7 +220,7 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 20px;
-    font-size: 32px;
+    font-size: 36px;
     padding: 2em;
     /* flex: 1; */
     height: max-content;
@@ -221,7 +239,7 @@ textarea{
     background-color: #000;
     /* word-wrap: break-word; */
     /* white-space: pre-wrap; */
-    font-size: 22px;
+    font-size: 32px;
     padding: 6px;
     overflow: hidden;
     width: 100%;
@@ -254,7 +272,7 @@ color: black;
 }
 
 .timer-div > p{
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .timer-modal{
@@ -309,7 +327,10 @@ cursor: pointer;
 
 button{
     cursor: pointer;
-    padding: 8px 16px;
+    padding: 6px 16px;
+    font-family: handwriting-2;
+    font-size: 16px;
+    margin-top: 1em;
 }
 
 @keyframes scroll{
