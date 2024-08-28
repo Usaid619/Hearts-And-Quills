@@ -53,33 +53,6 @@
     /* background-color: lavender; */
 }
 
-header{
-    /* display: flex;
-    justify-content: space-between;
-    padding: 0 3.5rem;
-    background-image: linear-gradient(to right, rgb(238, 148, 163),rgb(221, 192, 26));
-    align-items: center;
-    background-color: red;
-    color: rgb(241, 241, 241); */
-    /* padding: 24px; */
-    /* height: 14%; */
-    /* height: 80px; */
-}
-
-/* .cues{
-    display: flex;
-    gap: 1rem;
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-} */
-
-/* .name{
-    font-size: 32px;
-    color: white;
-    pointer-events: none;
-} */
-
 a{
     text-decoration: none;
 }
@@ -122,6 +95,16 @@ textarea{
     border:1px solid red;
     height: 100%;
     padding: 1em 1em;
+}
+
+.blur{
+    /* background-color: rgba(255, 0, 0, 0.158); */
+    inset: 0;
+    position: absolute;
+    z-index: 10;
+    backdrop-filter: blur(0);
+    pointer-events: none;
+    transition: all 1s ease;
 }
 /* 
 .text-area-div::before{

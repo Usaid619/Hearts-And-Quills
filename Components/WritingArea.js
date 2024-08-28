@@ -88,6 +88,7 @@ const WritingArea = () =>{
  
     return(
         <div className="text-area-div">
+            <div className="blur" style={{backdropFilter:`blur(${Math.abs(idleTimer - 10)}px)`}}></div>
         <div className="writing-header">
             <ul>
                 <h3>Cues:</h3>
