@@ -105,7 +105,7 @@ textarea{
     height: 100%;
     width: 100%;
     padding: 16px 12px;
-    border-radius: 1.4em;
+    border-radius: 1em;
     /* background-color: rgb(252, 236, 208); */
     background-image: url(./Assets/Images/page.avif);
     background-size: cover;
@@ -174,15 +174,26 @@ textarea{
 
 .copy-btn{
     position: absolute;
-    bottom: 2%;
+    bottom: 3%;
     right: 2%;
     outline: none;
     border: 1px solid grey;
     border-radius: 14px;
     font-weight: 700;
     background-color: gainsboro;
+    transition: all .2s ease;
+    letter-spacing: 2px;
     /* height: 100px;
     width: 100px; */
+}
+
+.copy-btn:hover{
+    background-color: rgb(37, 37, 37);
+    color: rgb(216, 216, 216);
+}
+
+.copy-btn:active{
+    scale: 0.9;
 }
 
 .start-btn{
@@ -197,7 +208,11 @@ textarea{
 }
 
 .start-btn:hover{
-    scale: 1.05;
+    scale: 1.04;
+}
+
+.start-btn:active{
+    scale: 0.95;
 }
 
 .intro-div{
@@ -284,13 +299,13 @@ color: black;
     position: absolute;
     display: flex;
     gap: 10px;
-    font-size: 14px;
+    font-size: 20px;
     top: -100%;
     left: 50%;
     translate: -50% -50%;
     width: max-content;
 background-color: black;
-padding: 1em;
+padding: .5em 1em;
 border-radius: 10px;
 color: rgb(206, 202, 202);
 text-decoration: underline;

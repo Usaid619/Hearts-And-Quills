@@ -73,7 +73,7 @@ const WritingArea = () =>{
 
     const copyText = () =>{
         navigator.clipboard.writeText(text)
-        alert("copied Text")
+        // alert("copied Text")
     }
     
     const preventSelection = (e) =>{
