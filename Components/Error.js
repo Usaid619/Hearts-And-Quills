@@ -1,3 +1,4 @@
+
 const ErrorPage = () =>{
     return(
         <h1>Oops! Error Occured</h1>
