@@ -203,7 +203,6 @@ textarea{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: white; */
     height: 100%;
     color: #EBD4CB;
     /* overflow: hidden; */
@@ -220,7 +219,6 @@ textarea{
     gap: 20px;
     font-size: 36px;
     padding: 2em;
-    /* flex: 1; */
     height: max-content;
     width: max-content;
     background-image: url(./Assets/Images/scribble-11.png);
@@ -235,8 +233,6 @@ textarea{
     gap: 1em;
     bottom: 2%;
     background-color: #000;
-    /* word-wrap: break-word; */
-    /* white-space: pre-wrap; */
     font-size: 32px;
     padding: 6px;
     overflow: hidden;
@@ -245,7 +241,6 @@ textarea{
 }
 
 .marquee > span{
-    /* background-color: #fff; */
     color: wheat;
     display: inline-block;
     padding: 0 .3em;
