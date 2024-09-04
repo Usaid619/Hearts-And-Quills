@@ -11,7 +11,7 @@ const Intro = () =>{
     const {sessionTime,setWritingTime} = useContext(WritingContext)
 
     const wordOfTheDay = useRandomWord
-    console.log(wordOfTheDay)
+    // console.log(wordOfTheDay)
 
     return(
         <div className="intro-div">
