@@ -1,68 +1,21 @@
 import { useContext, useEffect, useState } from "react"
 import WritingContext from "../utils/WritingContext"
 import useRandomWord from "../utils/hooks/useRandomWord"
+import useSessionTimer from "../utils/hooks/useSessionTimer"
+import useIdleTimer from "../utils/hooks/useIdleTimer"
 
 const WritingArea = () =>{
     const wordOfTheDay = useRandomWord
     const {sessionTime} = useContext(WritingContext)
     const [text,setText] = useState("")
+    // console.log(setText)
     const [timerStarted,setTimerStarted] = useState(false)
-    const [time, setTime] = useState(0)
-    const [percentage,setPercentage] = useState(0)
-    const [idleTimer,setIdleTimer] = useState(10)
-    
-    useEffect(()=>{
-        let timer
-      if(timerStarted){
-        timer = setInterval(()=>{
-        setTime(prev =>{
-            if(prev>=sessionTime * 60){
-                clearInterval(timer)
-                setTimerStarted(false)
-                return prev
-            }
-            return prev + 1
-        })
-        },1000)
-      }
+  
+    const {time,percentage,setTime} = useSessionTimer(sessionTime,timerStarted)
 
-      return () => clearInterval(timer)
-    },[timerStarted,sessionTime])
+    const idleTimer = useIdleTimer(timerStarted,setTimerStarted,text,setText,sessionTime,time,setTime)
 
-    useEffect(()=>{
-        // console.log(sessionTime)
-        console.log(idleTimer)
-          setPercentage(time / (sessionTime * 60) * 100)
-    },[time,sessionTime])
-
-    useEffect(()=>{
-        let idleTime
-        setIdleTimer(10)
-
-        if(time <= sessionTime * 60){
-            console.log(time)
-            clearInterval(idleTime)
-        }
-       
-      if(timerStarted){
-        idleTime = setInterval(()=>{
-            
-        setIdleTimer(prev =>{
-            
-            if(prev <= 1){
-                setText("")
-                setTimerStarted(false)
-                setTime(0)
-                clearInterval(idleTime)
-                return "too slow"
-            }
-           return prev - 1
-        })
-        },1000)
-      }
-
-      return () => clearInterval(idleTime)
-    },[timerStarted,text])
+    // console.log("idleTimer Outside -" + idleTimer)
 
     const handleChange = (e) =>{
         setText(e.target.value)
@@ -98,7 +51,6 @@ const WritingArea = () =>{
                 <li>Taste</li>
                 <li>Touch</li>
             </ul>
-
             <div className="wotd-div">
             <h4>Word Of The Day -</h4>
             <h2>{wordOfTheDay.toUpperCase()}</h2>
@@ -119,7 +71,7 @@ const WritingArea = () =>{
             value={text}
             autoFocus>
             </textarea>
-            {text && !timerStarted &&  <button className="copy-btn" onClick={()=>copyText()}>Copy</button>}
+            {text && !timerStarted &&  (<button className="copy-btn" onClick={()=>copyText()}>Copy</button>)}
             </div>
             
             <div className="progress" style={{width:`${percentage}%`}}></div>
