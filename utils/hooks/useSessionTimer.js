@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useSessionTimer = (sessionTime, timerStarted) =>{
+const useSessionTimer = (sessionTime, timerStarted,setTimerStarted) =>{
 const [time, setTime] = useState(0)
 const [percentage,setPercentage] = useState(0)
 
@@ -11,6 +11,7 @@ useEffect(()=>{
     setTime(prev => {
         if(prev >= sessionTime * 60){
             clearInterval(timer)
+            setTimerStarted(false)
             return prev
         }
         return prev + 1

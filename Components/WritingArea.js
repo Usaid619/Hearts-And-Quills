@@ -11,7 +11,7 @@ const WritingArea = () =>{
     // console.log(setText)
     const [timerStarted,setTimerStarted] = useState(false)
   
-    const {time,percentage,setTime} = useSessionTimer(sessionTime,timerStarted)
+    const {time,percentage,setTime} = useSessionTimer(sessionTime,timerStarted,setTimerStarted)
 
     const idleTimer = useIdleTimer(timerStarted,setTimerStarted,text,setText,sessionTime,time,setTime)
 

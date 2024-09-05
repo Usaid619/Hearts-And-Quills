@@ -1,44 +1,41 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-const useIdleTimer = (timerStarted,setTimerStarted,text,setText,sessionTime,time,setTime) =>{
+const useIdleTimer = (timerStarted, setTimerStarted, text, setText, sessionTime, time, setTime) => {
+
     const [idleTimer,setIdleTimer] = useState(10)
 
-    useEffect(() =>{
-    let timer
-    setIdleTimer(10)
-
-    console.log("sessionTime:", sessionTime);
-    console.log("time:", time);
-
-    // Ensure multiplication is happening
-    const totalSessionTime = sessionTime * 60;
-    console.log("sessionTime * 60:", totalSessionTime);
+    useEffect(()=>{
+    let idleInterval
 
     if(time === sessionTime * 60){
-        console.log("time ended")
-        clearInterval(timer)
-    }
+            clearInterval(idleInterval)
+        }
+    
+    setIdleTimer(10)
 
     if(timerStarted){
-        timer = setInterval(()=>{
-        setIdleTimer(prev =>{
-        if(prev <=1 ){
-            setText("")
+         idleInterval = setInterval(() =>{
+         setIdleTimer((prev)=>{
+         if(prev <= 1){
             setTimerStarted(false)
-            setIdleTimer(10)
             setTime(0)
-            clearInterval(timer)
-            return 0
+            setText("")
+            clearInterval(idleInterval)
+            return prev
         }
+
         return prev - 1
     })
-    
-    },1000)}
+    },1000)
+    }
 
-    return () => clearInterval(timer)
+    return () =>{
+        clearInterval(idleInterval)
+    }
+
     },[timerStarted,text])
 
-    return idleTimer
-}
+  return idleTimer;
+};
 
-export default useIdleTimer
+export default useIdleTimer;
