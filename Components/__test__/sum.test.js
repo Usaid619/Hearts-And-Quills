@@ -1,7 +1,7 @@
-import { sum } from "../sum"
+import sum from "../sum";
 
-test("Sum function should calculate the sum of two functions",()=>{
-    const result = sum(3,4)
+test("testing sum component independently which is unit testing",()=>{
+    const result = sum(4,3)
 
-    expect(result).toBe(5)
+    expect(result).toBe(7)
 })
