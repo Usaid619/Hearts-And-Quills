@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 
 // Components
-import Header from "./Components/Header"
 import WritingArea from "./Components/WritingArea"
 import ErrorPage from "./Components/Error"
 import ThankYou from "./Components/ThankYou"

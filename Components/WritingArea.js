@@ -39,6 +39,7 @@ const WritingArea = () =>{
     return(
         <div className="text-area-div">
             <div className="blur" style={{backdropFilter:`blur(${Math.abs(idleTimer - 10)}px)`}}></div>
+            
         <div className="writing-header">
             <ul>
                 <h3>Cues:</h3>
@@ -53,6 +54,7 @@ const WritingArea = () =>{
             <h2>{wordOfTheDay.toUpperCase()}</h2>
             </div>
         </div>
+
             <p className="idle-timer" style={{color:idleTimer <= 4 ? "firebrick" : idleTimer <= 6 ? "yellow" : "black"}}>{idleTimer}</p>
             
             <div className="text-area-container">
