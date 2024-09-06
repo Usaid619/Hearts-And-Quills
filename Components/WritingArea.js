@@ -8,14 +8,11 @@ const WritingArea = () =>{
     const wordOfTheDay = useRandomWord
     const {sessionTime} = useContext(WritingContext)
     const [text,setText] = useState("")
-    // console.log(setText)
     const [timerStarted,setTimerStarted] = useState(false)
   
     const {time,percentage,setTime} = useSessionTimer(sessionTime,timerStarted,setTimerStarted)
 
     const idleTimer = useIdleTimer(timerStarted,setTimerStarted,text,setText,sessionTime,time,setTime)
-
-    // console.log("idleTimer Outside -" + idleTimer)
 
     const handleChange = (e) =>{
         setText(e.target.value)
