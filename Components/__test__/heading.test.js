@@ -6,6 +6,6 @@ test("check if the writingArea is loading",()=>{
     render(<WritingArea/>)
     const heading = screen.getByPlaceholderText("start writing here...")
 
-    // ASSERTION
+    // assertion
     expect(heading).toBeInTheDocument()
 })
