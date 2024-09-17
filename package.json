@@ -2,10 +2,10 @@
   "name": "hearts-and-quills",
   "version": "1.0.0",
   "description": "A writing app  with a twist.",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "npx parcel index.html"
+    "start": "npx parcel index.html",
+    "build":"npx parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   "author": "usaid",
   "license": "ISC",
   "dependencies": {
+    "firebase": "^10.13.1",
     "parcel": "^2.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

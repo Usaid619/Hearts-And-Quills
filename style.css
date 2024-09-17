@@ -92,7 +92,7 @@ textarea{
     position: relative;
     display: flex;
     flex-direction: column;
-    border:1px solid red;
+    /* border:1px solid red; */
     height: 100%;
     padding: 1em 1em;
 }
@@ -213,7 +213,7 @@ textarea{
     color: #EBD4CB;
     text-shadow: 2px 2px 0 black;
     /* overflow: hidden; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
     font-family: handwriting-1;
 }
 
