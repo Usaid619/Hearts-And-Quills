@@ -32,6 +32,23 @@
     overflow: hidden;
 }
 
+.log-in-page-container{
+    background-color:red;
+    height:100vh;
+}
+
+.banner{
+    height:100%;
+    width:55%;
+    object-fit:contain;
+}
+
+.banner-img{
+    object-fit:cover;
+    height:100%;
+    width: 100%;
+}
+
 .idle-timer{
     position: absolute;
     top: 4%;
