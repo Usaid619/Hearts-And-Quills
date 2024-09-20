@@ -1,5 +1,6 @@
 import img from "../Assets/Images/output (2).webp"
 import Button from "./Button"
+import Form from "./Form"
 
 const LogIn = () =>{
     const handleLogIn = ()=>{
@@ -18,7 +19,10 @@ const LogIn = () =>{
             </div>
         </div>
         <div className="log-in-container">
-
+        <div className="logo-div">
+                <img src="" alt="logo"/>
+            </div>
+        <Form/>
         </div>
         </div>
     )
