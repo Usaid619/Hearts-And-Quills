@@ -33,20 +33,59 @@
 }
 
 .log-in-page-container{
+    display:flex;
     background-color:red;
     height:100vh;
 }
 
 .banner{
+    position:relative;
     height:100%;
-    width:55%;
+    flex:1.5;
     object-fit:contain;
 }
 
 .banner-img{
     object-fit:cover;
     height:100%;
-    width: 100%;
+    width:100%;
+}
+
+.banner-btns{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    top:50%;
+    right:0;
+    translate:0 -50%;
+    border:1px solid red;
+}
+
+.log-sign-btn{
+    height: 60px;
+    width: 270px;
+    outline: none;
+    border: 1px solid black;
+    background-color: #F99172;
+    color: #262135;
+    border-radius: 100px 0 0 100px;
+    margin: 0;
+    transition: all .2s ease;
+    font-size: 20px;
+}
+
+.log-sign-btn:hover{
+    background-color: #262135;
+    color: #F99172;
+    width: 280px;
+}
+
+.log-in-container{
+    background-color:green;
+    height:100%;
+    flex:1;
 }
 
 .idle-timer{

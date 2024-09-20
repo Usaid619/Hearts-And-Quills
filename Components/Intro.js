@@ -27,7 +27,7 @@ const Intro = () =>{
             </div>
             
             <Link to={"/playground"}>
-               <Button/>
+               <Button text={"Start Writing"} className={"start-btn"}/>
             </Link>
          
         </div>
