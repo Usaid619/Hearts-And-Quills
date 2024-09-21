@@ -179,6 +179,26 @@ input::placeholder{
     padding: .4em 1em;
 }
 
+.log-out-btn{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background-color: rgba(0, 0, 0, 0.411);
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+    transition: all .2s ease;
+}
+
+.log-out-btn:hover{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background-color: rgba(255, 255, 255, 0.811);
+    color: black;
+    border: 1px solid black;
+    font-size: 20px;
+}
 
 .idle-timer{
     position: absolute;
@@ -333,6 +353,7 @@ textarea{
     outline: none;
     border: none;
     padding: .5em 1em;
+    margin-top: 1em;
     border-radius: 1em;
     color: #eee;
     font-size: 18px;
@@ -352,6 +373,7 @@ textarea{
 }
 
 .intro-div{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -361,7 +383,7 @@ textarea{
     color: #EBD4CB;
     text-shadow: 2px 2px 0 black;
     /* overflow: hidden; */
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-family: handwriting-1;
 }
 
@@ -488,7 +510,6 @@ button{
     padding: 6px 16px;
     font-family: handwriting-2;
     font-size: 16px;
-    margin-top: 1em;
 }
 
 @keyframes scroll{

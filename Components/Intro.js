@@ -4,17 +4,33 @@ import Modal from "./Modal"
 import Button from "./Button"
 import WritingContext from "../utils/WritingContext"
 import useRandomWord from "../utils/hooks/useRandomWord"
+import { signOut } from "firebase/auth"
+import { auth } from "../utils/firebase"
+import { useNavigate } from "react-router-dom"
 
 const Intro = () =>{
     const [showModal,setShowModal] = useState(false)
     
     const {sessionTime,setWritingTime} = useContext(WritingContext)
+    const navigate = useNavigate()
+
+    const handleLogOut = () =>{
+        // log out function
+        signOut(auth)
+        .then(()=>{
+        navigate("/")
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
 
     const wordOfTheDay = useRandomWord
     // console.log(wordOfTheDay)
 
     return(
         <div className="intro-div">
+            <Button onClick={handleLogOut} text={"Log Out"} className={"log-out-btn"}/>
         <div className="intro-info-div">
             <h1>Hearts And Quills</h1>
             <h4>Word of the day - {wordOfTheDay.toUpperCase()}</h4>
