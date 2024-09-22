@@ -49,6 +49,7 @@ const Form = ({isSignUpForm}) =>{
         navigate("/intro")
         })
         .catch((err)=>{
+          console.log(err)
             setErrorMessage(err)
         })
         }

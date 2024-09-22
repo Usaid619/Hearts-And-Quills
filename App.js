@@ -7,7 +7,7 @@ import WritingArea from "./Components/WritingArea"
 import ErrorPage from "./Components/Error"
 import ThankYou from "./Components/ThankYou"
 import Intro from "./Components/Intro"
-import LogIn from "./Components/LogIn"
+// import LogIn from "./Components/LogIn"
 import { useState } from "react"
 import WritingContext from "./utils/WritingContext"
 
@@ -29,12 +29,12 @@ const AppRoute = createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:<LogIn/>
-            },
-            {
-                path:"/intro",
                 element:<Intro/>
             },
+            // {
+            //     path:"/intro",
+            //     element:<Intro/>
+            // },
             {
                 path:"/playground",
                 element:<WritingArea/>

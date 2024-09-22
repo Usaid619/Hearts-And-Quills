@@ -1,7 +1,8 @@
-
 const ErrorPage = () =>{
     return(
-        <h1>Oops! Error Occured</h1>
+        <div className="error-div">
+            <h1>Oops! Something went wrong.</h1>
+        </div>
     )
 }
 
