@@ -217,21 +217,26 @@ input::placeholder{
 
 .idle-timer{
     position: absolute;
-    top: 4%;
+    top: 2%;
     left: 50%;
     translate: -50% 0;
     color: #000;
     font-size: 32px;
+    z-index: 100;
 }
 
 .writing-header{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
-    background-color: #f0eeeeb4;
+    background-color: hsla(0, 6%, 94%, 0.706);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.856);
     backdrop-filter: blur(5px);
-    padding: 1em;
-    border-radius: 1em;
+    padding: .6em;
+    /* border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: black; */
+    border-radius: 0 0 1em 1em;
     font-family: handwriting-1;
     /* background-color: lavender; */
 }
@@ -256,6 +261,7 @@ textarea{
     resize: none;
     outline: none;
     letter-spacing: 1px;
+
     font-size: clamp(1.6875rem, 1.1918rem + 2.4786vw, 5.3125rem);
     line-height: 1.5rem;
     height: 100%;
@@ -267,7 +273,7 @@ textarea{
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    box-shadow: 0 0 10px 1px rgba(87, 78, 78, 0.527);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.856);
     /* overflow: hidden; */
 }
 
@@ -277,7 +283,7 @@ textarea{
     flex-direction: column;
     /* border:1px solid red; */
     height: 100%;
-    padding: 1em 1em;
+    padding:0 1em 1em 1em;
 }
 
 .blur{
