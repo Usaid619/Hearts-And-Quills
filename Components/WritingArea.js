@@ -50,12 +50,12 @@ const WritingArea = () =>{
                 <li>Touch</li>
             </ul>
             <div className="wotd-div">
-            <h4>Word Of The Day -</h4>
+            {/* <h4>Word Of The Day -</h4> */}
             <h2>{wordOfTheDay.toUpperCase()}</h2>
             </div>
         </div>
 
-            <p className="idle-timer" style={{color:idleTimer <= 4 ? "firebrick" : idleTimer <= 6 ? "yellow" : "black"}}>{idleTimer}</p>
+            <p className="idle-timer" style={{color:idleTimer <= 4 ? "firebrick" : idleTimer <= 6 ? "rgb(226, 80, 27)" : "black"}}>{idleTimer}</p>
             
             <div className="text-area-container">
             <textarea 

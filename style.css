@@ -221,8 +221,7 @@ input::placeholder{
     left: 50%;
     translate: -50% 0;
     color: #000;
-    font-size: 32px;
-    z-index: 100;
+    font-size: clamp(1.75rem, 1.4423rem + 1.5385vw, 4rem);    z-index: 100;
 }
 
 .writing-header{
@@ -233,13 +232,42 @@ input::placeholder{
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.856);
     backdrop-filter: blur(5px);
     padding: .6em;
+   
     /* border-width: 0 1px 1px 1px;
     border-style: solid;
     border-color: black; */
     border-radius: 0 0 1em 1em;
     font-family: handwriting-1;
+    font-size: clamp(0.8125rem, 0.5304rem + 1.4103vw, 2.875rem);
     /* background-color: lavender; */
 }
+
+
+.writing-header > ul{
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    gap: .5em;
+    /* height: max-content; */
+    /* background-color: red; */
+    color: black;
+    list-style: none;
+    /* font-size: 26px; */
+}
+
+.wotd-div{
+    /* position: absolute; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: .6em;
+    /* background-color: red; */
+    /* right: 3%;
+    top: 50%;
+    translate: 0 -50%; */
+    /* font-size: 26px; */
+}
+
 
 a{
     text-decoration: none;
@@ -321,39 +349,16 @@ textarea{
     transition: all 1s ease;
 }
 
-.writing-header > ul{
-    display: flex;
-    align-items: center;
-    /* flex-direction: column; */
-    gap: .5em;
-    /* height: max-content; */
-    /* background-color: red; */
-    color: black;
-    list-style: none;
-    font-size: 26px;
-}
-
-.wotd-div{
-    /* position: absolute; */
-    display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    gap: .6em;
-    /* background-color: red; */
-    /* right: 3%;
-    top: 50%;
-    translate: 0 -50%; */
-    font-size: 26px;
-}
-
 .copy-btn{
     position: absolute;
     bottom: 3%;
     right: 2%;
     outline: none;
     border: 1px solid grey;
-    border-radius: 14px;
+    border-radius: 50px;
+    padding: .2em .8em;
     font-weight: 700;
+    font-size: clamp(0.75rem, 0.4936rem + 1.2821vw, 2.625rem);
     background-color: gainsboro;
     transition: all .2s ease;
     letter-spacing: 2px;
@@ -564,9 +569,9 @@ button{
     }
 }
 
-@media all and (max-width:1200px) {
-    .wotd-div > div{
-        font-size: 20px;
+@media all and (max-width:768px) {
+    .idle-timer{
+        display: none;
     }
 }
 
