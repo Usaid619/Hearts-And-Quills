@@ -256,12 +256,12 @@ textarea{
     resize: none;
     outline: none;
     letter-spacing: 1px;
-    font-size: 32px;
+    font-size: clamp(1.6875rem, 1.1918rem + 2.4786vw, 5.3125rem);
     line-height: 1.5rem;
     height: 100%;
     width: 100%;
-    padding: 16px 12px;
-    border-radius: 1em;
+    padding: .4em .3em;
+    border-radius: 16px;
     /* background-color: rgb(252, 236, 208); */
     background-image: url(./Assets/Images/page.avif);
     background-size: cover;
@@ -371,7 +371,7 @@ textarea{
     margin-top: .7em;
     border-radius: 1em;
     color: #eee;
-    font-size: 18px;
+    font-size: clamp(1rem, 0.7778rem + 1.1111vw, 2.625rem);
     box-shadow: 0 0 10px 2px #D5C1A6a9;
     /* background-color: #020202; */
     background-image: linear-gradient(to top right, #230200, #020202,#230200);
@@ -473,14 +473,14 @@ color: black;
 .timer-modal > div{
     position: absolute;
     display: flex;
-    gap: 10px;
-    font-size: 20px;
-    top: -100%;
+    gap: .6em;
+    font-size: clamp(0.8125rem, 0.5219rem + 1.453vw, 2.9375rem);
+    top: 0%;
     left: 50%;
-    translate: -50% -50%;
+    translate: -50% calc(-100% - 1em);
     width: max-content;
 background-color: black;
-padding: .5em 1em;
+padding: .2em .4em;
 border-radius: 10px;
 color: rgb(206, 202, 202);
 text-decoration: underline;
