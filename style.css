@@ -91,7 +91,7 @@
     margin: 0;
     padding: 1em;
     transition: all .2s ease;
-    font-size: 20px;
+    font-size: clamp(1.125rem, 0.5161rem + 1.2685vw, 2.625rem);
 }
 
 .active{
@@ -125,7 +125,7 @@
 }
 
 .logo{
-    width: 90px;
+    width: clamp(3.125rem, 2.0823rem + 5.2137vw, 10.75rem);
     /* height: 10px; */
 }
 
@@ -135,7 +135,7 @@
     flex-direction: column;
     gap: .4em;
     width: 53%;
-    font-size: 26px;
+    font-size: clamp(1.625rem, -0.0494rem + 3.4884vw, 5.75rem);
     /* border: 1px solid rgb(0, 0, 0); */
 }
 .sign-up-form{
@@ -154,20 +154,20 @@ flex-direction: column;
 }
 
 .sign-up-form >p{
-    font-size: 20px;
+    font-size: clamp(1.375rem, 0.9437rem + 0.8985vw, 2.4375rem);
     color: rgb(122, 121, 121);
 }
 
 .sign-up-form label{
     color: white;
-    margin-top: .4em;
+    margin-top: .1em;
     /* font-size: 18px; */
     font-weight: 700;
 }
 
 .sign-up-form input{
     background-color: transparent;
-    font-size: 18px;
+    font-size: clamp(1rem, 0.1374rem + 1.797vw, 3.125rem);
     padding: .4em 1em;
     outline: none;
     border: 2px solid rgb(214, 214, 214);
@@ -193,7 +193,22 @@ input::placeholder{
     background-color: white;
     color: black;
     border: 2px solid white;
-    font-size: 18px;
+    border-radius: 10px;
+    font-size: clamp(1rem, 0.1374rem + 1.797vw, 3.125rem);
+    padding: .4em 1em;
+    transition: scale .2s ease;
+}
+
+.sign-btn:active{
+    scale: 0.99;
+}
+
+.sign-btn:hover{
+    background-color: rgb(233, 230, 230);
+    color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: clamp(1rem, 0.1374rem + 1.797vw, 3.125rem);
     padding: .4em 1em;
 }
 
@@ -584,7 +599,7 @@ button{
     left:50%;
     translate:-50% -50%;
     width: 100%;
-    border:1px solid red;
+    /* border:1px solid red; */
 }
 
 .log-sign-btn{
