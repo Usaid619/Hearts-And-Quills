@@ -71,22 +71,25 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    /* font-size: 20px; */
     gap: 8px;
     top:50%;
     right:0;
     translate:0 -50%;
+    width: 100%;
     /* border:1px solid red; */
 }
 
 .log-sign-btn{
-    height: 60px;
-    width: 270px;
+    /* height: 60px; */
+    width: 30%;
     outline: none;
     border: 1px solid black;
     background-color: #F99172;
     color: #262135;
     border-radius: 100px 0 0 100px;
     margin: 0;
+    padding: 1em;
     transition: all .2s ease;
     font-size: 20px;
 }
@@ -94,13 +97,13 @@
 .active{
     background-color: black;
     color: white;
-    width: 290px;
+    width: calc(30% + 30px);
 }
 
 .log-sign-btn:hover{
     /* background-color: #262135;
     color: #F99172; */
-    width: 290px;
+    width: calc(30% + 30px);
 }
 
 .log-in-container{
@@ -535,7 +538,6 @@ button{
     cursor: pointer;
     padding: 6px 16px;
     font-family: handwriting-2;
-    font-size: 16px;
 }
 
 @keyframes scroll{
@@ -570,6 +572,46 @@ button{
 }
 
 @media all and (max-width:768px) {
+.banner-btns{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* font-size: 20px; */
+    gap: 8px;
+    top:50%;
+    left:50%;
+    translate:-50% -50%;
+    width: 100%;
+    border:1px solid red;
+}
+
+.log-sign-btn{
+    /* height: 60px; */
+    width: 70%;
+    outline: none;
+    border: 1px solid black;
+    background-color: #F99172;
+    color: #262135;
+    border-radius: 20px;
+    margin: 0;
+    padding: 1em;
+    transition: all .2s ease;
+    font-size: 20px;
+}
+
+.active{
+    background-color: black;
+    color: white;
+}
+
+.log-sign-btn:hover{
+    width: 70%;
+    background-color: black;
+    color: white;
+}
+
     .idle-timer{
         display: none;
     }
