@@ -74,7 +74,7 @@ const Form = ({isSignUpForm}) =>{
                 <input ref={mail} id="mail" placeholder="Enter Your email"/>
 
                 <label htmlFor="password">Enter Password</label>
-                <input ref={password} id="password" placeholder="Enter Password"/>
+                <input type="password" ref={password} id="password" placeholder="Enter Password"/>
 
                 <p className="errorMessage">{errorMessage}</p>
 

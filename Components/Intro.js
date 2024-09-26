@@ -30,7 +30,7 @@ const Intro = () =>{
 
     return(
         <div className="intro-div">
-            {/* <Button onClick={handleLogOut} text={"Log Out"} className={"log-out-btn"}/> */}
+            <Button onClick={handleLogOut} text={"Log Out"} className={"log-out-btn"}/>
         <div className="intro-info-div">
             <h1>Hearts And Quills</h1>
             <h4>Word of the day - {wordOfTheDay.toUpperCase()}</h4>
