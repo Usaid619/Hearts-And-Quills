@@ -15,10 +15,8 @@ const Form = ({isSignUpForm}) =>{
 
     const handleSignUp = () =>{
         
-        console.log("sign logic")
-        // validate details
-        if(isSignUpForm){
-          const validate = useValidate(mail.current.value,password.current.value)
+         // validate details
+        const validate = useValidate(mail.current.value,password.current.value)
 
           if(validate){
             setErrorMessage(validate)
@@ -27,6 +25,9 @@ const Form = ({isSignUpForm}) =>{
             setErrorMessage(null)
           }
 
+
+          // console.log("sign logic")
+        if(isSignUpForm){
    // authenticate / create user
 
           createUserWithEmailAndPassword(auth,mail.current.value,password.current.value)
@@ -36,25 +37,31 @@ const Form = ({isSignUpForm}) =>{
 
           // update profile
         // route
-          navigate("/intro")
+          // navigate("/intro")
           })
           .catch((err)=>{
-           setErrorMessage(err)
+            const errorCode = error.code
+            const errorMessage = error.message
+            console.log(errorCode + errorMessage)
+            setErrorMessage(errorCode + errorMessage)
           })
         } else{
             // signInLogic
         signInWithEmailAndPassword(auth,mail.current.value,password.current.value)
         .then((userCred)=>{
         const user = userCred.user
-        navigate("/intro")
+        // navigate("/intro")
         })
-        .catch((err)=>{
-          console.log(err)
-            setErrorMessage(err)
+        .catch((error)=>{
+          const errorCode = error.code
+          const errorMessage = error.message
+          console.log(errorCode + errorMessage)
+          setErrorMessage(errorCode + errorMessage)
+            // console.log("lol")
         })
         }
+
         
-     
         
     }
     return(
@@ -74,7 +81,7 @@ const Form = ({isSignUpForm}) =>{
                 <input ref={mail} id="mail" placeholder="Enter Your email"/>
 
                 <label htmlFor="password">Enter Password</label>
-                <input type="password" ref={password} id="password" placeholder="Enter Password"/>
+                <input type="text" ref={password} id="password" placeholder="Enter Password"/>
 
                 <p className="errorMessage">{errorMessage}</p>
 
