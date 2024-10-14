@@ -1,12 +1,13 @@
-import { useContext, useEffect, useState } from "react"
-import WritingContext from "../utils/WritingContext"
+import { useState } from "react"
 import useRandomWord from "../utils/hooks/useRandomWord"
 import useSessionTimer from "../utils/hooks/useSessionTimer"
 import useIdleTimer from "../utils/hooks/useIdleTimer"
+import { useSelector } from "react-redux"
 
 const WritingArea = () =>{
     const wordOfTheDay = useRandomWord
-    // const {sessionTime} = useContext(WritingContext)
+    const sessionTime = useSelector(store => store.configurations.sessionTime)
+   
     const [text,setText] = useState("")
     const [timerStarted,setTimerStarted] = useState(false)
   
@@ -38,7 +39,7 @@ const WritingArea = () =>{
  
     return(
         <div className="text-area-div">
-            <div className="blur" style={{backdropFilter:`blur(${Math.abs(idleTimer - 10)}px)`}}></div>
+            <div className="blur" style={{backdropFilter:`blur(${Math.abs((idleTimer - 10)/2)}px)`}}></div>
             
         <div className="writing-header">
             <ul>

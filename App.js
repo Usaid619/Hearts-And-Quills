@@ -38,8 +38,6 @@ useEffect(()=>{
   return () => unsubscribe()
 },[])
 
-
-
     return (
         <Provider store={appStore}>
               <div className="parent">
