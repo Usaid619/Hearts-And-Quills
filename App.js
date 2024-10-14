@@ -9,10 +9,11 @@ import ThankYou from "./Components/ThankYou"
 import Intro from "./Components/Intro"
 import LogIn from "./Components/LogIn"
 import { useEffect, useState } from "react"
-import WritingContext from "./utils/WritingContext"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "./utils/firebase"
 import { useNavigate } from "react-router-dom"
+import appStore from "./store/appStore"
+import { Provider } from "react-redux"
 
 const AppLayout = () => {
     const navigate = useNavigate()
@@ -40,11 +41,11 @@ useEffect(()=>{
 
 
     return (
-        <WritingContext.Provider value={{sessionTime: writingTime,setWritingTime}}>
-        <div className="parent">
-            <Outlet/>
-        </div>
-        </WritingContext.Provider>
+        <Provider store={appStore}>
+              <div className="parent">
+              <Outlet/>
+              </div>
+        </Provider>
     )
 }
 

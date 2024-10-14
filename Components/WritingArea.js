@@ -6,7 +6,7 @@ import useIdleTimer from "../utils/hooks/useIdleTimer"
 
 const WritingArea = () =>{
     const wordOfTheDay = useRandomWord
-    const {sessionTime} = useContext(WritingContext)
+    // const {sessionTime} = useContext(WritingContext)
     const [text,setText] = useState("")
     const [timerStarted,setTimerStarted] = useState(false)
   

@@ -1,7 +1,7 @@
-import { createContext } from "react";
+// import { createContext } from "react";
 
-const WritingContext = createContext({
-    sessionTime:10
-})
+// const WritingContext = createContext({
+//     sessionTime:10
+// })
 
-export default WritingContext
+// export default WritingContext

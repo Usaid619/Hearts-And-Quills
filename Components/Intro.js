@@ -2,16 +2,22 @@ import { useState, useContext} from "react"
 import { Link } from "react-router-dom"
 import Modal from "./Modal"
 import Button from "./Button"
-import WritingContext from "../utils/WritingContext"
 import useRandomWord from "../utils/hooks/useRandomWord"
 import { signOut } from "firebase/auth"
 import { auth } from "../utils/firebase"
 import { useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { addSessionTime } from "../store/slices/configurations"
 
 const Intro = () =>{
     const [showModal,setShowModal] = useState(false)
+    const dispatch = useDispatch()
+    const sessionTime = useSelector(store => store.configurations.sessionTime)
     
-    const {sessionTime,setWritingTime} = useContext(WritingContext)
+    const setSessionTime = (time) =>{
+        dispatch(addSessionTime(time))
+    }
     const navigate = useNavigate()
 
     const handleLogOut = () =>{
@@ -37,7 +43,7 @@ const Intro = () =>{
             <div className="timer-div">
                 <p>Writing Session -</p>
                 <div className="timer-modal">
-                    {showModal && <Modal setShowModal={setShowModal} setWritingTime={setWritingTime}/>}    
+                    {showModal && <Modal setShowModal={setShowModal} setSessionTime={setSessionTime}/>}    
                 <p onClick={()=>setShowModal(!showModal)}>{sessionTime} mins</p>
                 </div>
             </div>
