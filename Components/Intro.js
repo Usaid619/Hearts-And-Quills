@@ -37,7 +37,7 @@ const Intro = () =>{
         <div className="intro-info-div">
             <h1>Hearts And Quills</h1>
             {/* Add user's name here*/}
-            <h4>{greeting} {userName ? userName : "User"}</h4>
+            <h4>{greeting} {userName ? userName.toUpperCase() : "User"}</h4>
             <div className="timer-div">
                 <p>Writing Session -</p>
                 <div className="timer-modal">
