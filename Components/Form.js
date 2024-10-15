@@ -42,9 +42,7 @@ const Form = ({isSignUpForm}) =>{
           displayName: username.current.value
           }).then(() => {
           // Profile updated!
-          // Add user to the store
-          const {email,uid,displayName} = user
-          dispatch(addLoggedUser({email:email,uid:uid,displayName:displayName}))
+          
           // console.log(user)
           // ...
           }).catch((error) => {

@@ -15,26 +15,28 @@ import { useNavigate } from "react-router-dom"
 import appStore from "./store/appStore"
 import { Provider } from "react-redux"
 import { useDispatch } from "react-redux"
-import { removeLoggedUser } from "./store/slices/userSlice"
+import { removeLoggedUser, addLoggedUser } from "./store/slices/userSlice"
 
 const AppLayout = () => {
-    // const dispatch = useDispatch()
     const navigate = useNavigate()
-// const [writingTime,setWritingTime] = useState(5)
+    // const [writingTime,setWritingTime] = useState(5)
+    const dispatch = useDispatch()
 
 useEffect(()=>{
-    // This is like a listener that ets attached when the app mounts
+    // This is like a listener that gets attached when the app mounts
  const unsubscribe = onAuthStateChanged(auth, (user) => {
     if (user) {
     //   console.log("signed In")
 
-      const uid = user.uid
-    //   console.log(user)
+       // Add user to the store
+       const {email,uid,displayName} = user
+       dispatch(addLoggedUser({email:email,uid:uid,displayName:displayName}))
+    
       navigate("/intro")
       // ...
     } else {
       // User is signed out
-    //   dispatch(removeLoggedUser())
+      dispatch(removeLoggedUser())
       // ...
       navigate("/")
     }
@@ -44,11 +46,9 @@ useEffect(()=>{
 },[])
 
     return (
-        <Provider store={appStore}>
               <div className="parent">
               <Outlet/>
               </div>
-        </Provider>
     )
 }
 
@@ -79,4 +79,9 @@ const AppRoute = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.querySelector("#root"))
 
-root.render(<RouterProvider router={AppRoute}/>)
+root.render(
+    <Provider store={appStore}>
+      <RouterProvider router={AppRoute}/>  
+    </Provider>
+
+)

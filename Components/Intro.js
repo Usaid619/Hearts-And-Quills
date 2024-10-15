@@ -2,7 +2,6 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import useGreeting from "../utils/hooks/useGreeting"
-import { removeLoggedUser } from "../store/slices/userSlice"
 import Modal from "./Modal"
 import Button from "./Button"
 import { signOut } from "firebase/auth"
@@ -12,8 +11,8 @@ import { addSessionTime } from "../store/slices/configSlice"
 const Intro = () =>{
     const [showModal,setShowModal] = useState(false)
     const dispatch = useDispatch()
-    const sessionTime = useSelector(store => store.config.sessionTime)
-    const userName = useSelector(store => store.user.displayName)
+    const sessionTime = useSelector(store => store?.config?.sessionTime)
+    const userName = useSelector(store => store?.user?.displayName)
 
     const greeting = useGreeting()
     
@@ -25,7 +24,7 @@ const Intro = () =>{
         // log out function
         signOut(auth)
         .then(()=>{
-        dispatch(removeLoggedUser())
+        // dispatch(removeLoggedUser())
         })
         .catch((err)=>{
             console.log(err)
@@ -38,7 +37,7 @@ const Intro = () =>{
         <div className="intro-info-div">
             <h1>Hearts And Quills</h1>
             {/* Add user's name here*/}
-            <h4>{greeting} {userName ? userName : "user"}</h4>
+            <h4>{greeting} {userName ? userName : "User"}</h4>
             <div className="timer-div">
                 <p>Writing Session -</p>
                 <div className="timer-modal">
