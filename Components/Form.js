@@ -2,10 +2,14 @@ import Button from "./Button"
 import useValidate from "../utils/hooks/useValidate"
 import { useRef, useState } from "react"
 import { auth } from "../utils/firebase"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { useNavigate } from "react-router-dom"
+import { addLoggedUser } from "../store/slices/userSlice"
+import { useDispatch } from "react-redux"
 
 const Form = ({isSignUpForm}) =>{
+    const dispatch = useDispatch()
+
     const mail = useRef(null)
     const password = useRef(null)
     const username = useRef(null)
@@ -25,7 +29,6 @@ const Form = ({isSignUpForm}) =>{
             setErrorMessage(null)
           }
 
-
           // console.log("sign logic")
         if(isSignUpForm){
    // authenticate / create user
@@ -33,13 +36,27 @@ const Form = ({isSignUpForm}) =>{
           createUserWithEmailAndPassword(auth,mail.current.value,password.current.value)
           .then((userCred)=>{
           const user = userCred.user
-          const {email,uid,displayName,photoUrl} = user
-
           // update profile
+
+          updateProfile(user, {
+          displayName: username.current.value
+          }).then(() => {
+          // Profile updated!
+          // Add user to the store
+          const {email,uid,displayName} = user
+          dispatch(addLoggedUser({email:email,uid:uid,displayName:displayName}))
+          // console.log(user)
+          // ...
+          }).catch((error) => {
+          // An error occurred
+          console.log(error)
+          // ...
+          });
+          // console.log(user)
         // route
           // navigate("/intro")
           })
-          .catch((err)=>{
+          .catch((error)=>{
             const errorCode = error.code
             const errorMessage = error.message
             console.log(errorCode + errorMessage)
@@ -59,10 +76,7 @@ const Form = ({isSignUpForm}) =>{
           setErrorMessage(errorCode + errorMessage)
             // console.log("lol")
         })
-        }
-
-        
-        
+        }   
     }
     return(
             <form onSubmit={(e) =>e.preventDefault() } className="sign-up-form">

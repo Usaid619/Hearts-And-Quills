@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const configSlice = createSlice({
-    name:"configurations",
+    name:"config",
     initialState:{
     sessionTime:5
     },

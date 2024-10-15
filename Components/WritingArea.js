@@ -1,12 +1,14 @@
 import { useState } from "react"
-import useRandomWord from "../utils/hooks/useRandomWord"
+// import useRandomWord from "../utils/hooks/useRandomWord"
 import useSessionTimer from "../utils/hooks/useSessionTimer"
 import useIdleTimer from "../utils/hooks/useIdleTimer"
 import { useSelector } from "react-redux"
+import useGreeting from "../utils/hooks/useGreeting"
 
 const WritingArea = () =>{
-    const wordOfTheDay = useRandomWord
-    const sessionTime = useSelector(store => store.configurations.sessionTime)
+    // const wordOfTheDay = useRandomWord
+    
+    const sessionTime = useSelector(store => store.config.sessionTime)
    
     const [text,setText] = useState("")
     const [timerStarted,setTimerStarted] = useState(false)
@@ -52,7 +54,7 @@ const WritingArea = () =>{
             </ul>
             <div className="wotd-div">
             {/* <h4>Word Of The Day -</h4> */}
-            <h2>{wordOfTheDay.toUpperCase()}</h2>
+            {/* <h2>{wordOfTheDay.toUpperCase()}</h2> */}
             </div>
         </div>
 
