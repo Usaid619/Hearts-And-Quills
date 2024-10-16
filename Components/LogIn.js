@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { LOGIN_LOGO } from "../utils/Constants"
-import logo from "../Assets/Images/logo-2-removebge.png"
+import { LOGIN_BG } from "../utils/Constants"
 import Button from "./Button"
 import Form from "./Form"
 
@@ -17,7 +17,7 @@ const LogIn = () =>{
     return(
         <div className="log-in-page-container">
         <div className="banner">
-            <img className="banner-img" src={LOGIN_LOGO}/>
+            <img className="banner-img" src={LOGIN_BG}/>
             <div className="banner-btns">
                 <Button onClick={handleLogIn} text={"LOG IN"} className={`log-sign-btn ${!isSignUpForm && "active"}`}/>
                 <Button onClick={handleSignUp} text={"SIGN UP"} className={`log-sign-btn ${isSignUpForm && "active"}`}/>
@@ -25,7 +25,7 @@ const LogIn = () =>{
         </div>
         <div className="log-in-container">
         <div className="logo-div">
-                <img className="logo" src={logo} alt="logo"/>
+                <img className="logo" src={LOGIN_LOGO} alt="logo"/>
             </div>
         <Form isSignUpForm={isSignUpForm}/>
         </div>
