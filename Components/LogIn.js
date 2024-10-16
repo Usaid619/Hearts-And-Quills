@@ -1,5 +1,5 @@
 import { useState } from "react"
-import bgImg from "../Assets/Images/bg.webp"
+import { LOGIN_LOGO } from "../utils/Constants"
 import logo from "../Assets/Images/logo-2-removebge.png"
 import Button from "./Button"
 import Form from "./Form"
@@ -17,7 +17,7 @@ const LogIn = () =>{
     return(
         <div className="log-in-page-container">
         <div className="banner">
-            <img className="banner-img" src={bgImg}/>
+            <img className="banner-img" src={LOGIN_LOGO}/>
             <div className="banner-btns">
                 <Button onClick={handleLogIn} text={"LOG IN"} className={`log-sign-btn ${!isSignUpForm && "active"}`}/>
                 <Button onClick={handleSignUp} text={"SIGN UP"} className={`log-sign-btn ${isSignUpForm && "active"}`}/>

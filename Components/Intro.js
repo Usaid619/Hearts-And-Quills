@@ -7,6 +7,7 @@ import Button from "./Button"
 import { signOut } from "firebase/auth"
 import { auth } from "../utils/firebase"
 import { addSessionTime } from "../store/slices/configSlice"
+import Header from "./Header"
 
 const Intro = () =>{
     const [showModal,setShowModal] = useState(false)
@@ -33,7 +34,7 @@ const Intro = () =>{
 
     return(
         <div className="intro-div">
-            <Button onClick={handleLogOut} text={"Log Out"} className={"log-out-btn"}/>
+            <Header handleLogOut={handleLogOut}/>
         <div className="intro-info-div">
             <h1>Hearts And Quills</h1>
             {/* Add user's name here*/}
