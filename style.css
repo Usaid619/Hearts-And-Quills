@@ -215,12 +215,18 @@ input::placeholder{
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 100%;
     /* height: 100px; */
     top: 0;
-    padding: 1em 2em;
-    /* background-color: red; */
+    padding: .7em 2em 0 2em;
+    /* background-color: rgba(255, 0, 0, 0.507); */
+}
+
+.intro-logo{
+    width: clamp(3.75rem, 2.6389rem + 5.5556vw, 11.875rem);
+    border-radius: 50%;
 }
 
 .log-out-btn{
@@ -230,7 +236,8 @@ header{
     background-color: rgba(0, 0, 0, 0.411);
     color: white;
     border: 1px solid white;
-    font-size: 20px;
+    font-size: clamp(0.875rem, 0.5673rem + 1.5385vw, 3.125rem);
+    height: max-content;
     transition: all .2s ease;
 }
 
@@ -238,7 +245,6 @@ header{
     background-color: rgba(255, 255, 255, 0.811);
     color: black;
     border: 1px solid black;
-    font-size: 20px;
 }
 
 .idle-timer{
@@ -422,10 +428,6 @@ textarea{
 
 .start-btn:active{
     scale: 0.95;
-}
-
-.intro-logo{
-    width: 50px;
 }
 
 .intro-div{

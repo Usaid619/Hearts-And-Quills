@@ -1,6 +1,6 @@
 import LogInBg from "../Assets/Images/bg.webp"
 import LogInLogo from "../Assets/Images/logo-2-removebg.png"
-import HeaderLogo from "../Assets/Images/logo.png"
+import HeaderLogo from "../Assets/Images/logo-2.jpg"
 
 export const HEADER_LOGO = HeaderLogo
 

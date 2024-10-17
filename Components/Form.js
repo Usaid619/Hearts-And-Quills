@@ -3,7 +3,6 @@ import useValidate from "../utils/hooks/useValidate"
 import { useRef, useState } from "react"
 import { auth } from "../utils/firebase"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth"
-import { useNavigate } from "react-router-dom"
 import { addLoggedUser } from "../store/slices/userSlice"
 import { useDispatch } from "react-redux"
 
@@ -15,89 +14,92 @@ const Form = ({isSignUpForm}) =>{
     const username = useRef(null)
 
     const [errorMessage, setErrorMessage] = useState(null)
-    const navigate = useNavigate()
 
-    const handleSignUp = () =>{
-        
-         // validate details
-        const validate = useValidate(mail.current.value,password.current.value)
+    const handleSubmit = (e) =>{
+      e.preventDefault()
 
-          if(validate){
+           // validate details
+           const validate = useValidate(mail.current.value,password.current.value)
+
+           if(validate){
             setErrorMessage(validate)
             return
           } else{
             setErrorMessage(null)
           }
 
-          // console.log("sign logic")
+           // console.log("sign logic")
         if(isSignUpForm){
-   // authenticate / create user
-
-          createUserWithEmailAndPassword(auth,mail.current.value,password.current.value)
-          .then((userCred)=>{
-          const user = userCred.user
-          // update profile
-
-          updateProfile(user, {
-          displayName: username.current.value
-          }).then(() => {
-          // Profile updated!
-          
-          // console.log(user)
-          // ...
-          }).catch((error) => {
-          // An error occurred
-          console.log(error)
-          // ...
-          });
-          // console.log(user)
-        // route
-          // navigate("/intro")
-          })
-          .catch((error)=>{
-            const errorCode = error.code
-            const errorMessage = error.message
-            console.log(errorCode + errorMessage)
-            setErrorMessage(errorCode + errorMessage)
-          })
-        } else{
-            // signInLogic
-        signInWithEmailAndPassword(auth,mail.current.value,password.current.value)
-        .then((userCred)=>{
-        const user = userCred.user
-        // navigate("/intro")
-        })
-        .catch((error)=>{
-          const errorCode = error.code
-          const errorMessage = error.message
-          console.log(errorCode + errorMessage)
-          setErrorMessage(errorCode + errorMessage)
-            // console.log("lol")
-        })
-        }   
+          // authenticate / create user
+       
+                 createUserWithEmailAndPassword(auth,mail.current.value,password.current.value)
+                 .then((userCred)=>{
+                 const user = userCred.user
+                 // update profile
+       
+                 updateProfile(user, {
+                 displayName: username.current.value
+                 }).then(() => {
+                 // Profile updated!
+                 // Add user o the store
+                 const {email,uid,displayName} = user
+                 dispatch(addLoggedUser({email:email,uid:uid,displayName:displayName}))
+                 // console.log(user)
+                 // ...
+                 }).catch((error) => {
+                 // An error occurred
+                 console.log(error)
+                 // ...
+                 });
+                 // console.log(user)
+               // route
+                 // navigate("/intro")
+                 })
+                 .catch((error)=>{
+                   const errorCode = error.code
+                   const errorMessage = error.message
+                   console.log(errorCode + errorMessage)
+                   setErrorMessage(errorCode + errorMessage)
+                 })
+               } else{
+                   // signInLogic
+               signInWithEmailAndPassword(auth,mail.current.value,password.current.value)
+               .then((userCred)=>{
+               const user = userCred.user
+               // navigate("/intro")
+               })
+               .catch((error)=>{
+                 const errorCode = error.code
+                 const errorMessage = error.message
+                 console.log(errorCode + errorMessage)
+                 setErrorMessage(errorCode + errorMessage)
+                   // console.log("lol")
+               })
+               }  
     }
+
     return(
-            <form onSubmit={(e) =>e.preventDefault() } className="sign-up-form">
+            <form onSubmit={handleSubmit} className="sign-up-form">
                 <h2>Welcome Back!</h2>
                 <p>The faster you fill up the faster you get a ticket.</p>
 
                 {isSignUpForm && (
                     <>
                     <label htmlFor="username">Username</label>
-                <input ref={username} id="username" placeholder="Enter Your Name"/>
+                <input required ref={username} id="username" placeholder="Enter Your Name"/>
                 </>)
                 }
                
 
                 <label htmlFor="mail">Email</label>
-                <input ref={mail} id="mail" placeholder="Enter Your email"/>
+                <input required ref={mail} id="mail" placeholder="Enter Your email"/>
 
                 <label htmlFor="password">Enter Password</label>
-                <input type="text" ref={password} id="password" placeholder="Enter Password"/>
+                <input required type="text" ref={password} id="password" placeholder="Enter Password"/>
 
                 <p className="errorMessage">{errorMessage}</p>
 
-                <Button text={"Sign In"} onClick={handleSignUp} className={"sign-btn"}/>
+                <Button type={"submit"} text={"Sign In"} className={"sign-btn"}/>
             </form>
     )
 }
