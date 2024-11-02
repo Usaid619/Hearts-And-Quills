@@ -135,7 +135,7 @@
     flex-direction: column;
     gap: .4em;
     width: 53%;
-    font-size: clamp(1.625rem, -0.0494rem + 3.4884vw, 5.75rem);
+    font-size: clamp(1rem, 0.6239rem + 1.8803vw, 3.75rem);
     /* border: 1px solid rgb(0, 0, 0); */
 }
 .sign-up-form{
