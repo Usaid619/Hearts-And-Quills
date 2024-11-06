@@ -92,10 +92,10 @@ const Form = ({isSignUpForm}) =>{
                
 
                 <label htmlFor="mail">Email</label>
-                <input required ref={mail} id="mail" placeholder="Enter Your email"/>
+                <input required ref={mail} id="mail" placeholder="example@gmail.com"/>
 
                 <label htmlFor="password">Enter Password</label>
-                <input required type="text" ref={password} id="password" placeholder="Enter Password"/>
+                <input required type="text" ref={password} id="password" placeholder="must be at least 6 characters"/>
 
                 <p className="errorMessage">{errorMessage}</p>
 
