@@ -225,7 +225,7 @@ header{
 }
 
 .intro-logo{
-    width: clamp(3.75rem, 2.6389rem + 5.5556vw, 11.875rem);
+    width: clamp(2.5rem, 1.9359rem + 2.8205vw, 6.625rem);
     border-radius: 50%;
 }
 
@@ -236,7 +236,8 @@ header{
     background-color: rgba(0, 0, 0, 0.411);
     color: white;
     border: 1px solid white;
-    font-size: clamp(0.875rem, 0.5673rem + 1.5385vw, 3.125rem);
+    font-size: clamp(1.25rem, 1.0791rem + 0.8547vw, 2.5rem);
+    padding: .2em .8em;
     height: max-content;
     transition: all .2s ease;
 }
@@ -253,7 +254,9 @@ header{
     left: 50%;
     translate: -50% 0;
     color: #000;
-    font-size: clamp(1.75rem, 1.4423rem + 1.5385vw, 4rem);    z-index: 100;
+    font-size: clamp(1.75rem, 1.4423rem + 1.5385vw, 4rem);
+    z-index: 100;
+    transition: color .2s ease;
 }
 
 .writing-header{
@@ -376,7 +379,7 @@ textarea{
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 5px;
+    height:8px;
     background-color: black;
     transition: all 1s ease;
 }
