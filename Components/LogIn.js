@@ -8,11 +8,11 @@ const LogIn = () =>{
     const [isSignUpForm,setIsSignUpForm] = useState(false)
     const handleLogIn = ()=>{
         setIsSignUpForm(false)
-        console.log("signed In")
+        // console.log("signed In")
     }
     const handleSignUp = ()=>{
         setIsSignUpForm(true)
-        console.log("signed up")
+        // console.log("signed up")
     }
     return(
         <div className="log-in-page-container">
@@ -27,7 +27,7 @@ const LogIn = () =>{
         <div className="logo-div">
                 <img className="logo" src={LOGIN_LOGO} alt="logo"/>
             </div>
-        <Form isSignUpForm={isSignUpForm}/>
+        <Form handleSignUp={handleSignUp} handleLogIn={handleLogIn} isSignUpForm={isSignUpForm}/>
         </div>
         </div>
     )

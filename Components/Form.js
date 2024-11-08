@@ -6,7 +6,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { addLoggedUser } from "../store/slices/userSlice"
 import { useDispatch } from "react-redux"
 
-const Form = ({isSignUpForm}) =>{
+const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
     const dispatch = useDispatch()
 
     const mail = useRef(null)
@@ -100,6 +100,13 @@ const Form = ({isSignUpForm}) =>{
                 <p className="errorMessage">{errorMessage}</p>
 
                 <Button type={"submit"} text={"Sign In"} className={"sign-btn"}/>
+                <div className="show-on-small">
+                {!isSignUpForm ?
+                <p>Don't have an account? <Button onClick={handleSignUp} type={"button"} text={"Create Now."} className={"create-now"}/></p> :
+                <p>Already have an account? <Button onClick={handleLogIn} type={"button"} text={"Log In."} className={"create-now"}/></p>
+              }
+              </div>
+                
             </form>
     )
 }

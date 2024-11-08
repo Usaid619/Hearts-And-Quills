@@ -26,8 +26,6 @@ useEffect(()=>{
     // This is like a listener that gets attached when the app mounts
  const unsubscribe = onAuthStateChanged(auth, (user) => {
     if (user) {
-    //   console.log("signed In")
-
        // Add user to the store
        const {email,uid,displayName} = user
        dispatch(addLoggedUser({email:email,uid:uid,displayName:displayName}))
