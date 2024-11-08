@@ -648,3 +648,20 @@ button{
         display: none;
     }
 }
+
+@media all and (max-width:425px) {
+    .banner{
+        width: 100%;
+    }
+
+    .log-in-container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 85%;
+        height: 85%;
+        background-color: #000000ef;
+        border-radius: 1em;
+    }
+}
