@@ -125,6 +125,7 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
                 <input required ref={mail} id="mail" placeholder="example@gmail.com"/>
 
                 <label htmlFor="password">Enter Password</label>
+                
                 <input required type="password" ref={password} id="password" placeholder="must be at least 6 characters"/>
 
                 <p className="errorMessage">{errorMessage}</p>
