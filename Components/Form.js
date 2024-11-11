@@ -28,7 +28,7 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
             setErrorMessage(null)
           }
 
-           // console.log("sign logic")
+        // SIGN IN LOGIC
         if(isSignUpForm){
           // authenticate / create user
        
@@ -41,43 +41,27 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
                  displayName: username.current.value
                  }).then(() => {
                  // Profile updated!
-                 // Add user o the store
+                 // Add user to the store
                  const {email,uid,displayName} = user
                  dispatch(addLoggedUser({email:email,uid:uid,displayName:displayName}))
-                 // console.log(user)
-                 // ...
+                //  console.log(user)
                  }).catch((error) => {
-                 // An error occurred
+                 
                  console.log(error)
-                 // ...
-                 });
-                 // console.log(user)
-               // route
-                 // navigate("/intro")
+                 
+                 })
                  })
                  .catch((error)=>{
                   handleAuthError(error)
-                  // console.log(error)
-                  //  const errorCode = error.code
-                  //  const errorMessage = error.message
-                  //  console.log(errorCode + errorMessage)
-                   
                  })
                } else{
                    // signInLogic
                signInWithEmailAndPassword(auth,mail.current.value,password.current.value)
                .then((userCred)=>{
                const user = userCred.user
-               // navigate("/intro")
                })
                .catch((error)=>{
                 handleAuthError(error)
-                // console.log(error.code)
-                //  const errorCode = error.code
-                //  const errorMessage = error.message
-                //  console.log(errorCode + errorMessage)
-                //  setErrorMessage(errorCode + errorMessage)
-                   // console.log("lol")
                })
                }  
     }
