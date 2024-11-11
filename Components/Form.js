@@ -56,10 +56,12 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
                  // navigate("/intro")
                  })
                  .catch((error)=>{
-                   const errorCode = error.code
-                   const errorMessage = error.message
-                   console.log(errorCode + errorMessage)
-                   setErrorMessage(errorCode + errorMessage)
+                  handleAuthError(error)
+                  // console.log(error)
+                  //  const errorCode = error.code
+                  //  const errorMessage = error.message
+                  //  console.log(errorCode + errorMessage)
+                   
                  })
                } else{
                    // signInLogic
@@ -69,13 +71,57 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
                // navigate("/intro")
                })
                .catch((error)=>{
-                 const errorCode = error.code
-                 const errorMessage = error.message
-                 console.log(errorCode + errorMessage)
-                 setErrorMessage(errorCode + errorMessage)
+                handleAuthError(error)
+                // console.log(error.code)
+                //  const errorCode = error.code
+                //  const errorMessage = error.message
+                //  console.log(errorCode + errorMessage)
+                //  setErrorMessage(errorCode + errorMessage)
                    // console.log("lol")
                })
                }  
+    }
+
+    const handleAuthError = (error) =>{
+      let message = ""
+
+      switch(error.code){
+        // Errors when creating an account
+        case "auth/email-already-in-use" :
+        message = "Email is already in use."
+        break
+
+        case "auth/invalid-credential" :
+        message = "Either Email or Password is Invalid."
+        break
+
+        case "auth/weak-password" :
+        message = "Password is too weak."
+        break
+
+        case "auth/operation-not-allowed" :
+        message = "Email/password accounts are not enabled in the Firebase Console for the project."
+        break
+
+        // Errors when logging in
+        case "auth/user-not-found" :
+        message = "No such email found."
+        break
+
+        case "auth/wrong-password" :
+        message = "Password is incorrect."
+        break
+
+        case "auth/user-disabled" :
+        message = "User account has been disabled by an admin."
+        break
+
+        default :
+        message = "An Unknown Error Ocurred."
+        break
+      }
+
+    setErrorMessage(message)
     }
 
     return(
