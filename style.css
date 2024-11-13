@@ -37,10 +37,12 @@
     height: 100vh;
     color: 1;
     font-family: handwriting-1;
+    border: 1px solid red;
+    background: linear-gradient(rgba(0, 0, 0, 0.781), rgba(192, 7, 7, 0.637));
 }
 
 .error-div > h1{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 40px;
 }
 

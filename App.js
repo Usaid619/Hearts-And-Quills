@@ -66,10 +66,10 @@ const AppRoute = createBrowserRouter([
                 path:"/playground",
                 element:<WritingArea/>
             },
-        {
+            {
             path:"/thank-you",
             element:<ThankYou/>
-        }
+            }
         ],
         errorElement:<ErrorPage/>
     }
