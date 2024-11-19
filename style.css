@@ -245,7 +245,7 @@ header{
 .log-out-btn:hover{
     background-color: hsla(0, 0%, 100%, 0.811);
     color: black;
-    border: 1px solid #000000;
+    border: 1px solid #000;
 }
 
 .idle-timer{
