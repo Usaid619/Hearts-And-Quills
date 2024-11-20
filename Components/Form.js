@@ -54,7 +54,7 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
                  .catch((error)=>{
                   handleAuthError(error)
                  })
-               } else{
+          } else{
                    // signInLogic
                signInWithEmailAndPassword(auth,mail.current.value,password.current.value)
                .then((userCred)=>{
@@ -63,7 +63,7 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
                .catch((error)=>{
                 handleAuthError(error)
                })
-               }  
+          }  
     }
 
     const handleAuthError = (error) =>{

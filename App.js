@@ -19,7 +19,6 @@ import { removeLoggedUser, addLoggedUser } from "./store/slices/userSlice"
 
 const AppLayout = () => {
     const navigate = useNavigate()
-    // const [writingTime,setWritingTime] = useState(5)
     const dispatch = useDispatch()
 
 useEffect(()=>{
