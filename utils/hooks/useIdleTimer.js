@@ -33,7 +33,7 @@ const useIdleTimer = (timerStarted, setTimerStarted, text, setText, sessionTime,
         clearInterval(idleInterval)
     }
 
-    },[timerStarted,text])
+    },[timerStarted,text.length])
 
   return idleTimer;
 };

@@ -15,14 +15,14 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
 
     const [errorMessage, setErrorMessage] = useState(null)
 
-    const handleSubmit = (e) =>{
+    const handleFormSubmit = (e) =>{
       e.preventDefault()
 
            // validate details
-           const validate = useValidate(mail.current.value,password.current.value)
+           const validationError = useValidate(mail.current.value,password.current.value)
 
-           if(validate){
-            setErrorMessage(validate)
+           if(validationError){
+            setErrorMessage(validationError)
             return
           } else{
             setErrorMessage(null)
@@ -109,7 +109,7 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
     }
 
     return(
-            <form onSubmit={handleSubmit} className="sign-up-form">
+            <form onSubmit={handleFormSubmit} className="sign-up-form">
                 <h2>Welcome Back!</h2>
                 <p>The faster you fill up the faster you get a ticket.</p>
 

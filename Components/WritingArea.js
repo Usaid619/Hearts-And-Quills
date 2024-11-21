@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 // import useRandomWord from "../utils/hooks/useRandomWord"
 import useSessionTimer from "../utils/hooks/useSessionTimer"
 import useIdleTimer from "../utils/hooks/useIdleTimer"
@@ -19,9 +19,10 @@ const WritingArea = () =>{
 
     const handleChange = (e) =>{
         setText(e.target.value)
+
         if(!timerStarted && e.target.value){
         setTimerStarted(true)
-        }  
+        } 
     }
 
     const copyText = () =>{
@@ -38,6 +39,8 @@ const WritingArea = () =>{
             preventSelection(e)
         }
     }
+
+    console.log(text)
  
     return(
         <div className="text-area-div">

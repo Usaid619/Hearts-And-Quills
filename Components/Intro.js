@@ -1,3 +1,4 @@
+import { lazy,Suspense } from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
@@ -8,6 +9,8 @@ import { signOut } from "firebase/auth"
 import { auth } from "../utils/firebase"
 import { addSessionTime } from "../store/slices/configSlice"
 import Header from "./Header"
+
+const Modal = lazy(() => import('./Modal'))
 
 const Intro = () =>{
     const [showModal,setShowModal] = useState(false)
@@ -42,7 +45,13 @@ const Intro = () =>{
             <div className="timer-div">
                 <p>Writing Session -</p>
                 <div className="timer-modal">
-                    {showModal && <Modal setShowModal={setShowModal} setSessionTime={setSessionTime}/>}    
+                    {showModal && (
+                        <Suspense fallback={<div>Loading...</div>}>
+                         <Modal setShowModal={setShowModal} setSessionTime={setSessionTime}/>
+                        </Suspense>
+                    )
+                    
+                    }    
                 <p onClick={()=>setShowModal(!showModal)}>{sessionTime} mins</p>
                 </div>
             </div>
