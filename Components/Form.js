@@ -5,6 +5,7 @@ import { auth } from "../utils/firebase"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { addLoggedUser } from "../store/slices/userSlice"
 import { useDispatch } from "react-redux"
+import { HIDE_PASSWORD_LOGO } from "../utils/Constants"
 
 const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
     const dispatch = useDispatch()
@@ -126,7 +127,11 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
 
                 <label htmlFor="password">Enter Password</label>
                 
-                <input required type="password" ref={password} id="password" placeholder="must be at least 6 characters"/>
+                <div className="password-div">
+                  <input required type="password" ref={password} id="password" placeholder="must be at least 6 characters"/>
+                  <img src={HIDE_PASSWORD_LOGO}/>
+                </div>
+                
 
                 <p className="errorMessage">{errorMessage}</p>
 
