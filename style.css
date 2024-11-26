@@ -217,7 +217,7 @@ input::placeholder{
     align-items: center;
     position: relative;
     /* background-color: red; */
-    border:  1px solid red;
+    border:  1px solid #ff0000;
     background-color: white;
 }
 
