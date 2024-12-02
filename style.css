@@ -79,7 +79,7 @@
 .log-sign-btn{
     width: 30%;
     outline: none;
-    border: 1px solid black;
+    border: 1px solid #000000;
     background-color: #F99172;
     color: #262135;
     border-radius: 100px 0 0 100px;
