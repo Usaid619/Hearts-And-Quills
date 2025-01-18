@@ -127,10 +127,8 @@ const Form = ({handleSignUp, handleLogIn, isSignUpForm}) =>{
 
                 <label htmlFor="password">Enter Password</label>
                 
-                <div className="password-div">
                   <input required type="password" ref={password} id="password" placeholder="must be at least 6 characters"/>
-                  <img src={HIDE_PASSWORD_LOGO}/>
-                </div>
+                 
                 
 
                 <p className="errorMessage">{errorMessage}</p>

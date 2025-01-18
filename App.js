@@ -1,8 +1,11 @@
+// Google Analytics
+import ReactGa from "react-ga"
 // Utilities
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 
 // Components
+import LandingPage from "./Components/LandingPage"
 import WritingArea from "./Components/WritingArea"
 import ErrorPage from "./Components/Error"
 import ThankYou from "./Components/ThankYou"
@@ -16,6 +19,9 @@ import appStore from "./store/appStore"
 import { Provider } from "react-redux"
 import { useDispatch } from "react-redux"
 import { removeLoggedUser, addLoggedUser } from "./store/slices/userSlice"
+
+ReactGa.initialize("G-SVJYFBGZLS")
+ReactGa.pageview(window.location.pathname + window.location.search)
 
 const AppLayout = () => {
     const navigate = useNavigate()
@@ -55,6 +61,10 @@ const AppRoute = createBrowserRouter([
         children:[
             {
                 path:"/",
+                element:<LandingPage/>
+            },
+            {
+                path:"/log-in",
                 element:<LogIn/>
             },
             {

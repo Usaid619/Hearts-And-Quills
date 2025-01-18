@@ -211,24 +211,24 @@ input::placeholder{
     padding: .4em 1em;
 }
 
-.password-div{
+/* .password-div{
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     position: relative;
-    /* background-color: red; */
+    background-color: red;
     border:  1px solid #ff0000;
     background-color: #ffffff;
-}
+} */
 
-.password-div > img{
+/* .password-div > img{
 position: absolute;
 top: 50%;
 right: 0;
 translate: 0 -50%;
-/* width: 100%; */
+width: 100%;
 height: 80%;
-}
+} */
 
 .show-on-small{
     margin: 20px auto;
